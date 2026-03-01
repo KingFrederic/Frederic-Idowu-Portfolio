@@ -211,7 +211,7 @@
         .play-btn {
             position: relative;
         }
-        
+
         .play-btn::after {
             content: '';
             position: absolute;
@@ -220,10 +220,118 @@
             border: 2px solid var(--netflix-red);
             animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
             0% { transform: scale(1); opacity: 1; }
             100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        /* Video Hero */
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay-left {
+            background: linear-gradient(105deg,
+                rgba(0,0,0,0.95) 0%,
+                rgba(0,0,0,0.80) 30%,
+                rgba(0,0,0,0.45) 60%,
+                rgba(0,0,0,0.15) 100%);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: rgba(20,20,20,0.98);
+            border-top: 1px solid rgba(229,9,20,0.3);
+            border-bottom: 1px solid rgba(229,9,20,0.15);
+        }
+
+        .stat-item {
+            position: relative;
+        }
+
+        .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 25%;
+            height: 50%;
+            width: 1px;
+            background: rgba(255,255,255,0.15);
+        }
+
+        /* Value Cards */
+        .value-card {
+            background: linear-gradient(135deg, rgba(229,9,20,0.08) 0%, rgba(20,20,20,0.9) 100%);
+            border: 1px solid rgba(229,9,20,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            border-color: rgba(229,9,20,0.6);
+            transform: translateY(-4px);
+            background: linear-gradient(135deg, rgba(229,9,20,0.15) 0%, rgba(20,20,20,0.95) 100%);
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+
+        /* Case Study Btn */
+        .case-study-link {
+            background: var(--netflix-red);
+            color: white;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+        }
+
+        .case-study-link:hover {
+            background: #f40612;
+            transform: scale(1.03);
+        }
+
+        /* Cinematic section headers */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--netflix-red);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 2rem;
+            height: 2px;
+            background: var(--netflix-red);
+        }
+
+        /* Available badge pulse */
+        .available-pulse {
+            animation: availPulse 2.5s ease infinite;
+        }
+
+        @keyframes availPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+            50% { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
         }
     </style>
 </head>
@@ -274,89 +382,124 @@
         </button>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section — Cinematic Video -->
     <header class="relative h-screen w-full overflow-hidden">
-        <!-- Background Image with Parallax -->
-        <div class="absolute inset-0">
-            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent z-10"></div>
-            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" 
-                 alt="Abstract Design Background" 
-                 class="w-full h-full object-cover opacity-60 scale-105 animate-[pulse_10s_ease-in-out_infinite]">
-        </div>
-        
+
+        <!-- Video Background (landscape, autoplay, muted) -->
+        <video class="hero-video opacity-65"
+               autoplay muted loop playsinline
+               poster="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop">
+            <source src="https://videos.pexels.com/video-files/2278095/2278095-hd_1920_1080_25fps.mp4" type="video/mp4">
+            <source src="https://videos.pexels.com/video-files/2278095/2278095-hd_1280_720_25fps.mp4" type="video/mp4">
+            <!-- Static fallback if video can't load -->
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop"
+                 class="hero-video" alt="Cinematic Design Background">
+        </video>
+
+        <!-- Cinematic Overlay — Left-heavy like Netflix originals -->
+        <div class="hero-overlay-left absolute inset-0 z-10"></div>
+        <!-- Extra bottom fade for smooth scroll-into-content transition -->
+        <div class="hero-bottom-fade absolute bottom-0 left-0 w-full z-10"></div>
+
         <!-- Hero Content -->
-        <div class="relative z-20 h-full flex flex-col justify-center px-4 md:px-12 lg:px-20 max-w-7xl">
-            <div class="space-y-6 max-w-3xl">
-                <!-- Badge -->
-                <div class="fade-in-up flex items-center gap-3 text-red-600 font-semibold tracking-widest text-sm uppercase">
-                    <span class="w-8 h-[2px] bg-red-600"></span>
-                    Featured Designer
+        <div class="relative z-20 h-full flex flex-col justify-center px-4 md:px-12 lg:px-20">
+            <div class="space-y-5 max-w-3xl">
+
+                <!-- Section Label -->
+                <div class="fade-in-up section-label">
+                    Visual Design Director
                 </div>
-                
-                <!-- Title -->
-                <h1 class="fade-in-up delay-100 font-cinematic text-6xl md:text-8xl lg:text-9xl leading-none text-white drop-shadow-2xl">
+
+                <!-- Cinematic Name -->
+                <h1 class="fade-in-up delay-100 font-cinematic leading-none drop-shadow-2xl"
+                    style="font-size: clamp(4rem, 12vw, 9rem);">
                     FRÉDÉRIC<br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">IDOWU</span>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">IDOWU</span>
                 </h1>
-                
-                <!-- Metadata -->
-                <div class="fade-in-up delay-200 flex flex-wrap items-center gap-4 text-sm md:text-base text-gray-300 font-medium">
-                    <span class="border border-gray-600 px-3 py-1 rounded">7+ Years Experience</span>
-                    <span class="flex items-center gap-1"><i data-lucide="globe" class="w-4 h-4"></i> Global Campaigns</span>
-                    <span class="flex items-center gap-1"><i data-lucide="award" class="w-4 h-4"></i> AU & GIZ Partner</span>
-                    <span class="text-green-400 flex items-center gap-1"><i data-lucide="circle" class="w-3 h-3 fill-current"></i> Available for Projects</span>
-                </div>
-                
-                <!-- Description -->
-                <p class="fade-in-up delay-300 text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed font-light">
-                    Senior Graphics Designer and Design Director leading visual identity systems, 
-                    campaign design execution, and cross-platform brand consistency for international 
-                    organizations across Africa, Europe, and North America.
+
+                <!-- Role / Tagline -->
+                <p class="fade-in-up delay-200 text-base md:text-lg text-gray-200 font-semibold tracking-wide uppercase">
+                    Brand Identity &nbsp;·&nbsp; Campaign Design &nbsp;·&nbsp; Visual Systems
                 </p>
-                
-                <!-- CTA Buttons -->
-                <div class="fade-in-up delay-400 flex flex-wrap gap-4 pt-4">
-                    <button onclick="scrollToSection('work')" class="btn-red text-white px-8 py-4 rounded-md font-semibold text-lg flex items-center gap-3 shadow-lg shadow-red-900/50">
-                        <i data-lucide="play" class="w-5 h-5 fill-current"></i>
-                        View Showreel
-                    </button>
-                    <button onclick="scrollToSection('contact')" class="btn-dark text-white px-8 py-4 rounded-md font-semibold text-lg flex items-center gap-3 border border-white/30">
-                        <i data-lucide="info" class="w-5 h-5"></i>
-                        More Info
-                    </button>
-                </div>
-                
-                <!-- Social Proof -->
-                <div class="fade-in-up delay-500 pt-8 flex items-center gap-6 text-gray-400">
-                    <a href="https://linkedin.com" target="_blank" class="hover:text-white transition-colors flex items-center gap-2">
-                        <i data-lucide="linkedin" class="w-5 h-5"></i>
-                        <span class="text-sm">LinkedIn</span>
-                    </a>
-                    <a href="mailto:fredericidowu@gmail.com" class="hover:text-white transition-colors flex items-center gap-2">
-                        <i data-lucide="mail" class="w-5 h-5"></i>
-                        <span class="text-sm">fredericidowu@gmail.com</span>
-                    </a>
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="phone" class="w-4 h-4"></i>
-                        <span class="text-sm">+234 706 227 3466</span>
+
+                <!-- Descriptor -->
+                <p class="fade-in-up delay-300 text-base md:text-xl text-gray-300 max-w-xl leading-relaxed font-light">
+                    I make organizations look like they mean business. From the African Union
+                    to US consulting firms — delivering institutional-grade visual excellence
+                    across 12+ countries for 7+ years.
+                </p>
+
+                <!-- Status Badges -->
+                <div class="fade-in-up delay-300 flex flex-wrap items-center gap-3 text-sm font-medium">
+                    <span class="available-pulse bg-green-900/40 border border-green-500/40 text-green-400 px-3 py-1 rounded-full flex items-center gap-2">
+                        <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+                        Open to Opportunities
+                    </span>
+                    <span class="border border-gray-600/60 text-gray-300 px-3 py-1 rounded-full flex items-center gap-2">
+                        <i data-lucide="award" class="w-3.5 h-3.5 text-red-500"></i>
+                        AU & GIZ Partner
+                    </span>
+                    <span class="border border-gray-600/60 text-gray-300 px-3 py-1 rounded-full flex items-center gap-2">
+                        <i data-lucide="globe" class="w-3.5 h-3.5 text-red-500"></i>
+                        Pan-African Campaigns
                     </span>
                 </div>
+
+                <!-- CTA Buttons -->
+                <div class="fade-in-up delay-400 flex flex-wrap gap-4 pt-2">
+                    <button onclick="scrollToSection('work')"
+                            class="btn-red text-white px-8 py-4 rounded-md font-bold text-base flex items-center gap-3 shadow-lg shadow-red-900/50">
+                        <i data-lucide="play" class="w-5 h-5 fill-current"></i>
+                        View My Work
+                    </button>
+                    <button onclick="scrollToSection('contact')"
+                            class="btn-dark text-white px-8 py-4 rounded-md font-semibold text-base flex items-center gap-3 border border-white/30">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        Get In Touch
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Scroll Down Indicator -->
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-gray-500 scroll-indicator">
+                <span class="text-[10px] tracking-widest uppercase">Scroll</span>
+                <i data-lucide="chevron-down" class="w-5 h-5"></i>
             </div>
         </div>
-        
-        <!-- Bottom Fade -->
-        <div class="absolute bottom-0 left-0 w-full hero-bottom-fade z-10"></div>
     </header>
 
+    <!-- Stats Bar — Instant Social Proof -->
+    <div class="stats-bar w-full py-4 px-4 md:px-12">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-0">
+            <div class="stat-item text-center py-2 px-4">
+                <div class="font-cinematic text-3xl md:text-4xl text-red-500">50<span class="text-2xl">+</span></div>
+                <div class="text-xs text-gray-400 tracking-wider uppercase mt-0.5">Design Assets / Month</div>
+            </div>
+            <div class="stat-item text-center py-2 px-4">
+                <div class="font-cinematic text-3xl md:text-4xl text-red-500">12<span class="text-2xl">+</span></div>
+                <div class="text-xs text-gray-400 tracking-wider uppercase mt-0.5">Countries Reached</div>
+            </div>
+            <div class="stat-item text-center py-2 px-4">
+                <div class="font-cinematic text-3xl md:text-4xl text-red-500">7<span class="text-2xl">+</span></div>
+                <div class="text-xs text-gray-400 tracking-wider uppercase mt-0.5">Years of Excellence</div>
+            </div>
+            <div class="stat-item text-center py-2 px-4">
+                <div class="font-cinematic text-3xl md:text-4xl text-red-500">45<span class="text-2xl">%</span></div>
+                <div class="text-xs text-gray-400 tracking-wider uppercase mt-0.5">Avg. Engagement Lift</div>
+            </div>
+        </div>
+    </div>
+
     <!-- Featured Work Section (Netflix Row Style) -->
-    <section id="work" class="relative z-30 -mt-20 pb-20">
+    <section id="work" class="relative z-30 pt-10 pb-20">
         <div class="px-4 md:px-12 space-y-12">
-            
+
             <!-- Row 1: Brand Identity & Campaigns -->
             <div class="space-y-4">
                 <div class="flex items-end justify-between px-2">
                     <h2 class="font-cinematic text-2xl md:text-3xl text-white flex items-center gap-3">
-                        Brand Identity & Campaigns
+                        Brand Identity &amp; Campaigns
                         <span class="text-xs font-sans text-gray-500 font-normal tracking-normal">New Releases</span>
                     </h2>
                     <div class="flex gap-2">
@@ -370,7 +513,8 @@
                 </div>
                 
                 <div id="row1" class="horizontal-scroll flex gap-4 pb-8 pt-4 px-2">
-                    <!-- Project Cards -->
+
+                    <!-- Tikera Africa -->
                     <div class="project-card relative flex-shrink-0 w-72 md:w-80 aspect-video rounded-md overflow-hidden cursor-pointer group bg-gray-800" onclick="openModal('tikera')">
                         <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Tikera Africa">
                         <div class="card-info absolute inset-0 flex flex-col justify-end p-4">
@@ -379,14 +523,19 @@
                                 <span class="text-xs text-gray-300">2025</span>
                             </div>
                             <h3 class="font-bold text-lg">Tikera Africa</h3>
-                            <p class="text-xs text-gray-300 mt-1">AU & GIZ Partnership • 12+ Countries</p>
-                            <div class="flex gap-2 mt-3">
+                            <p class="text-xs text-gray-300 mt-1">AU &amp; GIZ Partnership • 12+ Countries</p>
+                            <div class="flex items-center gap-2 mt-3">
                                 <span class="text-[10px] bg-white/20 px-2 py-1 rounded">Brand Identity</span>
                                 <span class="text-[10px] bg-white/20 px-2 py-1 rounded">Campaign</span>
+                                <a href="https://tikeraafrica.org/" target="_blank" onclick="event.stopPropagation()"
+                                   class="ml-auto text-[10px] bg-red-600 hover:bg-red-500 text-white px-2 py-1 rounded flex items-center gap-1">
+                                    <i data-lucide="external-link" class="w-3 h-3"></i> View
+                                </a>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Afri'Talent Bootcamp -->
                     <div class="project-card relative flex-shrink-0 w-72 md:w-80 aspect-video rounded-md overflow-hidden cursor-pointer group bg-gray-800" onclick="openModal('afritalent')">
                         <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Afri'Talent Bootcamp">
                         <div class="card-info absolute inset-0 flex flex-col justify-end p-4">
@@ -396,13 +545,18 @@
                             </div>
                             <h3 class="font-bold text-lg">Afri'Talent Bootcamp</h3>
                             <p class="text-xs text-gray-300 mt-1">Continental Talent Program</p>
-                            <div class="flex gap-2 mt-3">
+                            <div class="flex items-center gap-2 mt-3">
                                 <span class="text-[10px] bg-white/20 px-2 py-1 rounded">Event Design</span>
                                 <span class="text-[10px] bg-white/20 px-2 py-1 rounded">Visual Systems</span>
+                                <a href="https://meet-grace.my.canva.site/fredoluportfolio/#au" target="_blank" onclick="event.stopPropagation()"
+                                   class="ml-auto text-[10px] bg-red-600 hover:bg-red-500 text-white px-2 py-1 rounded flex items-center gap-1">
+                                    <i data-lucide="external-link" class="w-3 h-3"></i> View
+                                </a>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Reimagining Hope Residency -->
                     <div class="project-card relative flex-shrink-0 w-72 md:w-80 aspect-video rounded-md overflow-hidden cursor-pointer group bg-gray-800" onclick="openModal('reimagining')">
                         <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Reimagining Hope">
                         <div class="card-info absolute inset-0 flex flex-col justify-end p-4">
@@ -411,14 +565,19 @@
                                 <span class="text-xs text-gray-300">2024</span>
                             </div>
                             <h3 class="font-bold text-lg">Reimagining Hope Residency</h3>
-                            <p class="text-xs text-gray-300 mt-1">Federal Ministry of Art & Culture</p>
-                            <div class="flex gap-2 mt-3">
+                            <p class="text-xs text-gray-300 mt-1">Federal Ministry of Art &amp; Culture</p>
+                            <div class="flex items-center gap-2 mt-3">
                                 <span class="text-[10px] bg-white/20 px-2 py-1 rounded">National Brand</span>
                                 <span class="text-[10px] bg-white/20 px-2 py-1 rounded">Visual Identity</span>
+                                <a href="https://meet-grace.my.canva.site/projects-portfolio" target="_blank" onclick="event.stopPropagation()"
+                                   class="ml-auto text-[10px] bg-red-600 hover:bg-red-500 text-white px-2 py-1 rounded flex items-center gap-1">
+                                    <i data-lucide="external-link" class="w-3 h-3"></i> View
+                                </a>
                             </div>
                         </div>
                     </div>
 
+                    <!-- FBUX Consulting -->
                     <div class="project-card relative flex-shrink-0 w-72 md:w-80 aspect-video rounded-md overflow-hidden cursor-pointer group bg-gray-800" onclick="openModal('fbux')">
                         <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="FBUX Consulting">
                         <div class="card-info absolute inset-0 flex flex-col justify-end p-4">
@@ -428,28 +587,38 @@
                             </div>
                             <h3 class="font-bold text-lg">FBUX Consulting</h3>
                             <p class="text-xs text-gray-300 mt-1">Houston, Texas • Remote</p>
-                            <div class="flex gap-2 mt-3">
+                            <div class="flex items-center gap-2 mt-3">
                                 <span class="text-[10px] bg-white/20 px-2 py-1 rounded">Brand Systems</span>
                                 <span class="text-[10px] bg-white/20 px-2 py-1 rounded">Consulting</span>
+                                <a href="https://frankabaly.com/" target="_blank" onclick="event.stopPropagation()"
+                                   class="ml-auto text-[10px] bg-red-600 hover:bg-red-500 text-white px-2 py-1 rounded flex items-center gap-1">
+                                    <i data-lucide="external-link" class="w-3 h-3"></i> View
+                                </a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="project-card relative flex-shrink-0 w-72 md:w-80 aspect-video rounded-md overflow-hidden cursor-pointer group bg-gray-800" onclick="openModal('leverage')">
-                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Leverage Systems">
+                    <!-- Project Moov (replaces Leverage Systems) -->
+                    <div class="project-card relative flex-shrink-0 w-72 md:w-80 aspect-video rounded-md overflow-hidden cursor-pointer group bg-gray-800" onclick="openModal('moov')">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Project Moov">
                         <div class="card-info absolute inset-0 flex flex-col justify-end p-4">
                             <div class="flex items-center gap-2 mb-2">
-                                <span class="bg-indigo-600 text-white text-xs px-2 py-0.5 rounded">France</span>
-                                <span class="text-xs text-gray-300">2023-2024</span>
+                                <span class="bg-orange-600 text-white text-xs px-2 py-0.5 rounded">Mobility</span>
+                                <span class="text-xs text-gray-300">2024</span>
                             </div>
-                            <h3 class="font-bold text-lg">Leverage Systems</h3>
-                            <p class="text-xs text-gray-300 mt-1">Francophone Markets • +45% Engagement</p>
-                            <div class="flex gap-2 mt-3">
-                                <span class="text-[10px] bg-white/20 px-2 py-1 rounded">French Design</span>
-                                <span class="text-[10px] bg-white/20 px-2 py-1 rounded">Localization</span>
+                            <h3 class="font-bold text-lg">Project Moov</h3>
+                            <p class="text-xs text-gray-300 mt-1">Francophone Africa • Digital Campaign</p>
+                            <div class="flex items-center gap-2 mt-3">
+                                <span class="text-[10px] bg-white/20 px-2 py-1 rounded">Brand Design</span>
+                                <span class="text-[10px] bg-white/20 px-2 py-1 rounded">Campaign</span>
+                                <a href="https://meet-grace.my.canva.site/fdp" target="_blank" onclick="event.stopPropagation()"
+                                   class="ml-auto text-[10px] bg-red-600 hover:bg-red-500 text-white px-2 py-1 rounded flex items-center gap-1">
+                                    <i data-lucide="external-link" class="w-3 h-3"></i> View
+                                </a>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
 
@@ -568,22 +737,22 @@
                         </div>
                     </div>
 
-                    <!-- FBUX & Leverage -->
+                    <!-- FBUX & Project Moov -->
                     <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-8 group">
                         <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-green-600 rounded-full transform -translate-x-1/2 border-4 border-black z-10 group-hover:scale-150 transition-transform"></div>
                         <div class="md:w-1/2 md:text-left md:pl-12 pl-12">
                             <span class="text-green-500 font-semibold text-sm">2022 - 2024</span>
                             <h3 class="text-2xl font-bold mt-1">Senior Graphics Designer</h3>
-                            <p class="text-gray-400 font-semibold">FBUX Consulting & Leverage Systems</p>
-                            <p class="mt-3 text-sm text-gray-400">Remote roles for US and French markets. Brand identity systems, French-language campaign adaptation, +45% engagement increase through refined visual systems.</p>
+                            <p class="text-gray-400 font-semibold">FBUX Consulting &amp; Project Moov</p>
+                            <p class="mt-3 text-sm text-gray-400">Remote design leadership for US and Francophone African markets. Brand identity systems, culturally adapted campaign design, and a +45% engagement increase through precision visual execution.</p>
                         </div>
                         <div class="md:w-1/2 md:pr-12 pl-12 md:pl-0 md:text-right">
                             <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700 inline-block text-left">
                                 <div class="flex items-center gap-2 mb-2 justify-end">
-                                    <span class="text-xs text-gray-400">USA • France</span>
+                                    <span class="text-xs text-gray-400">USA • Francophone Africa</span>
                                     <span class="bg-green-600 text-xs px-2 py-1 rounded">International</span>
                                 </div>
-                                <p class="text-sm text-gray-300">Houston, TX • Francophone Markets</p>
+                                <p class="text-sm text-gray-300">Houston, TX • Abidjan • Remote</p>
                             </div>
                         </div>
                     </div>
@@ -604,6 +773,40 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Hire Frédéric — Value Proposition Section -->
+    <section class="py-20 px-4 md:px-12 bg-black">
+        <div class="max-w-6xl mx-auto">
+            <div class="section-label mb-4">The Difference</div>
+            <h2 class="font-cinematic text-4xl md:text-5xl mb-4">Why Global Organizations Choose Me</h2>
+            <p class="text-gray-400 mb-12 max-w-2xl">
+                Most designers make things look good. I make brands look authoritative, trustworthy, and ready to lead.
+            </p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="value-card rounded-xl p-7">
+                    <div class="w-12 h-12 bg-red-600/20 rounded-lg flex items-center justify-center mb-5">
+                        <i data-lucide="shield" class="w-6 h-6 text-red-500"></i>
+                    </div>
+                    <h3 class="font-cinematic text-2xl mb-3">Institutional Quality</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">I've designed for the African Union, GIZ, and Federal Government ministries. My work meets the highest standards of multilingual visual governance — no corner-cutting, ever.</p>
+                </div>
+                <div class="value-card rounded-xl p-7">
+                    <div class="w-12 h-12 bg-red-600/20 rounded-lg flex items-center justify-center mb-5">
+                        <i data-lucide="trending-up" class="w-6 h-6 text-red-500"></i>
+                    </div>
+                    <h3 class="font-cinematic text-2xl mb-3">Design That Performs</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">45% campaign engagement increase. 50+ assets delivered monthly without quality drops. My work isn't just beautiful — it measurably moves audiences and converts attention into action.</p>
+                </div>
+                <div class="value-card rounded-xl p-7">
+                    <div class="w-12 h-12 bg-red-600/20 rounded-lg flex items-center justify-center mb-5">
+                        <i data-lucide="globe-2" class="w-6 h-6 text-red-500"></i>
+                    </div>
+                    <h3 class="font-cinematic text-2xl mb-3">Cross-Cultural Fluency</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">English, French, Yoruba, Dioula. I don't just translate — I culturally adapt design for African and European markets, so your brand feels native everywhere it appears.</p>
                 </div>
             </div>
         </div>
@@ -776,35 +979,54 @@
         <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2000&auto=format&fit=crop')] opacity-10 bg-cover bg-center"></div>
         
         <div class="relative z-10 max-w-4xl mx-auto text-center">
-            <h2 class="font-cinematic text-5xl md:text-7xl mb-6">Let's Create Together</h2>
-            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-                Ready to elevate your brand with cinematic visual design? 
-                Available for international projects, campaign leadership, and brand system development.
+            <div class="section-label justify-center mb-4">Ready to Work</div>
+            <h2 class="font-cinematic text-5xl md:text-7xl mb-6">Your Brand Deserves<br>This Level of Design</h2>
+            <p class="text-lg md:text-xl text-gray-300 mb-4 max-w-2xl mx-auto leading-relaxed">
+                Whether you're launching a campaign, building a brand from scratch, or need a design director
+                who can lead and deliver — I'm available and ready to make your organization look unmissable.
             </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <a href="mailto:fredericidowu@gmail.com" class="btn-red text-white px-8 py-4 rounded-md font-semibold text-lg flex items-center justify-center gap-3">
+            <p class="text-red-400 font-semibold mb-12 tracking-wide">
+                ● Currently open to full-time roles, contracts, and project partnerships
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-14">
+                <a href="mailto:fredericidowu@gmail.com"
+                   class="btn-red text-white px-10 py-4 rounded-md font-bold text-lg flex items-center justify-center gap-3 shadow-xl shadow-red-900/40">
                     <i data-lucide="mail" class="w-5 h-5"></i>
-                    Start a Project
+                    Send Me a Brief
                 </a>
-                <a href="https://meet-grace.my.canva.site/fredoluportfolio" target="_blank" class="btn-dark text-white px-8 py-4 rounded-md font-semibold text-lg flex items-center justify-center gap-3 border border-white/30">
+                <a href="https://meet-grace.my.canva.site/fredoluportfolio" target="_blank"
+                   class="btn-dark text-white px-10 py-4 rounded-md font-semibold text-lg flex items-center justify-center gap-3 border border-white/30">
                     <i data-lucide="external-link" class="w-5 h-5"></i>
-                    View Full Portfolio
+                    Full Portfolio
                 </a>
             </div>
-            
-            <div class="flex flex-wrap justify-center gap-8 text-gray-400">
-                <a href="mailto:fredericidowu@gmail.com" class="hover:text-white transition-colors flex items-center gap-2">
-                    <i data-lucide="mail" class="w-5 h-5"></i>
-                    fredericidowu@gmail.com
+
+            <!-- Contact Details -->
+            <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-gray-400 border-t border-gray-800 pt-10">
+                <a href="mailto:fredericidowu@gmail.com" class="hover:text-white transition-colors flex items-center gap-2 group">
+                    <div class="p-2 rounded-lg bg-white/5 group-hover:bg-red-600/20 transition-colors">
+                        <i data-lucide="mail" class="w-4 h-4 text-red-500"></i>
+                    </div>
+                    <span class="text-sm">fredericidowu@gmail.com</span>
                 </a>
-                <a href="tel:+2347062273466" class="hover:text-white transition-colors flex items-center gap-2">
-                    <i data-lucide="phone" class="w-5 h-5"></i>
-                    +234 706 227 3466
+                <a href="tel:+2347062273466" class="hover:text-white transition-colors flex items-center gap-2 group">
+                    <div class="p-2 rounded-lg bg-white/5 group-hover:bg-red-600/20 transition-colors">
+                        <i data-lucide="phone" class="w-4 h-4 text-red-500"></i>
+                    </div>
+                    <span class="text-sm">+234 706 227 3466</span>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="hover:text-white transition-colors flex items-center gap-2 group">
+                    <div class="p-2 rounded-lg bg-white/5 group-hover:bg-red-600/20 transition-colors">
+                        <i data-lucide="linkedin" class="w-4 h-4 text-red-500"></i>
+                    </div>
+                    <span class="text-sm">LinkedIn Profile</span>
                 </a>
                 <span class="flex items-center gap-2">
-                    <i data-lucide="map-pin" class="w-5 h-5"></i>
-                    Lagos, Nigeria
+                    <div class="p-2 rounded-lg bg-white/5">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-red-500"></i>
+                    </div>
+                    <span class="text-sm">Lagos, Nigeria &nbsp;·&nbsp; Remote-Ready</span>
                 </span>
             </div>
         </div>
@@ -812,23 +1034,27 @@
 
     <!-- Footer -->
     <footer class="bg-black border-t border-gray-900 py-12 px-4 md:px-12">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                <span class="font-cinematic text-2xl text-red-600 font-bold">FREDERIC IDOWU</span>
-            </div>
-            <div class="text-gray-500 text-sm">
-                © 2025 Frédéric Idowu. Visual Design Director.
-            </div>
-            <div class="flex gap-4">
-                <a href="https://linkedin.com" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-                    <i data-lucide="linkedin" class="w-5 h-5"></i>
-                </a>
-                <a href="https://bit.ly/fredfolio" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-                    <i data-lucide="briefcase" class="w-5 h-5"></i>
-                </a>
-                <a href="mailto:fredericidowu@gmail.com" class="text-gray-400 hover:text-white transition-colors">
-                    <i data-lucide="mail" class="w-5 h-5"></i>
-                </a>
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <span class="font-cinematic text-2xl text-red-600 font-bold block">FREDERIC IDOWU</span>
+                    <span class="text-xs text-gray-600 tracking-widest uppercase">Visual Design Director · Lagos, Nigeria</span>
+                </div>
+                <div class="text-gray-600 text-xs text-center">
+                    © 2025 Frédéric Idowu. All rights reserved.<br>
+                    <span class="text-gray-700">Crafted with intention. Every pixel has a purpose.</span>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://linkedin.com" target="_blank" class="text-gray-400 hover:text-red-500 transition-colors" title="LinkedIn">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://bit.ly/fredfolio" target="_blank" class="text-gray-400 hover:text-red-500 transition-colors" title="Portfolio">
+                        <i data-lucide="briefcase" class="w-5 h-5"></i>
+                    </a>
+                    <a href="mailto:fredericidowu@gmail.com" class="text-gray-400 hover:text-red-500 transition-colors" title="Email">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
@@ -879,10 +1105,11 @@
                             <h3 class="text-gray-400 text-sm font-semibold uppercase tracking-wider mb-2">Tools Used</h3>
                             <div id="modalTools" class="flex flex-wrap gap-2"></div>
                         </div>
-                        <button class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-md font-semibold transition-colors flex items-center justify-center gap-2">
+                        <a id="modalCaseStudyBtn" href="#" target="_blank"
+                           class="w-full block bg-red-600 hover:bg-red-700 text-white py-3 rounded-md font-semibold transition-colors flex items-center justify-center gap-2 text-center">
                             <i data-lucide="external-link" class="w-4 h-4"></i>
                             View Case Study
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -958,6 +1185,7 @@
                 title: "Tikera Africa",
                 tag: "Featured Project",
                 year: "2025",
+                url: "https://tikeraafrica.org/",
                 image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop",
                 description: "Leading visual identity and graphic design direction for West African initiatives in partnership with the African Union and GIZ. Responsible for delivering 50+ design assets monthly across digital campaigns, events, institutional communications, and partner materials for 12+ African countries.",
                 achievements: [
@@ -974,6 +1202,7 @@
                 title: "Afri'Talent Bootcamp",
                 tag: "Pan-African Program",
                 year: "2025",
+                url: "https://meet-grace.my.canva.site/fredoluportfolio/#au",
                 image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2000&auto=format&fit=crop",
                 description: "Directed full-scale design systems for a continental talent development program backed by the African Union, GIZ, and Fit Africa. Delivered end-to-end visual assets including official documents, workbooks, signage, merchandise, and digital creatives for participants from 12 African countries.",
                 achievements: [
@@ -990,49 +1219,52 @@
                 title: "Reimagining Hope Residency",
                 tag: "National Cultural Flagship",
                 year: "2024",
+                url: "https://meet-grace.my.canva.site/projects-portfolio",
                 image: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=2000&auto=format&fit=crop",
-                description: "Led complete visual identity development for Nigeria's first federally funded national art residency under the Federal Ministry of Art, Culture & Creative Economy. Positioned the residency visually as a national cultural flagship through comprehensive brand systems.",
+                description: "Led complete visual identity development for Nigeria's first federally funded national art residency under the Federal Ministry of Art, Culture & Creative Economy. Positioned the residency visually as a national cultural flagship — covering venue branding, merchandise, digital campaigns, printed collateral, and governance documents that gave the programme its authoritative visual presence.",
                 achievements: [
-                    "Developed complete visual identity from concept to execution",
-                    "Designed and governed systems across merchandise, venue branding, digital campaigns",
-                    "Supervised creative production ensuring brand consistency",
-                    "Established residency as premier national cultural institution"
+                    "Developed complete visual identity from blank canvas to full brand launch",
+                    "Designed governance-grade systems: venue branding, merchandise, digital campaigns & print",
+                    "Supervised creative production ensuring brand consistency across all touchpoints",
+                    "Established residency as Nigeria's premier national cultural institution visually"
                 ],
                 role: "Graphics Design Director",
-                client: "Federal Ministry of Art, Culture & Creative Economy",
-                tools: ["Brand Identity", "Environmental Design", "Campaign Design", "Art Direction"]
+                client: "Federal Ministry of Art, Culture & Creative Economy — Nigeria",
+                tools: ["Brand Identity", "Environmental Design", "Campaign Design", "Art Direction", "Print Systems"]
             },
             fbux: {
                 title: "FBUX Consulting",
                 tag: "US Market",
                 year: "2022-2024",
+                url: "https://frankabaly.com/",
                 image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop",
-                description: "Owned brand identity and graphic design systems for a U.S.-based consulting firm in Houston, Texas. Developed campaign visuals, social graphics, and branded assets aligned with business positioning in the competitive consulting market.",
+                description: "Owned brand identity and graphic design systems for a U.S.-based consulting firm in Houston, Texas. Developed campaign visuals, social graphics, and branded assets aligned with business positioning in the competitive North American consulting market.",
                 achievements: [
-                    "Developed reusable design templates and visual guidelines",
-                    "Strengthened brand credibility and market positioning",
-                    "Partnered with leadership on strategic visual communication",
-                    "Ensured consistency across digital and print platforms"
+                    "Built complete brand system — templates, guidelines, and visual language from ground up",
+                    "Strengthened brand credibility and market positioning in the US consulting sector",
+                    "Partnered directly with leadership on strategic visual communication decisions",
+                    "Ensured seamless consistency across digital, social, and print platforms"
                 ],
                 role: "Senior Graphics Designer / Brand Design Lead",
                 client: "FBUX Consulting (Houston, Texas)",
-                tools: ["Brand Systems", "Social Media Design", "Template Development", "Consulting Branding"]
+                tools: ["Brand Systems", "Social Media Design", "Template Development", "Adobe Creative Suite"]
             },
-            leverage: {
-                title: "Leverage Systems",
-                tag: "Francophone Markets",
-                year: "2023-2024",
+            moov: {
+                title: "Project Moov",
+                tag: "Mobility & Innovation",
+                year: "2024",
+                url: "https://meet-grace.my.canva.site/fdp",
                 image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2000&auto=format&fit=crop",
-                description: "Led design execution for French-language marketing campaigns targeting European markets. Adapted English-language designs into culturally accurate Francophone visual systems, increasing campaign engagement by 45% through refined layouts, typography, and platform-specific optimization.",
+                description: "Directed brand design and campaign execution for Project Moov, a forward-thinking mobility and digital innovation initiative targeting Francophone Africa and European markets. Delivered culturally resonant visual systems that connected with diverse audiences through precise typographic adaptation, platform-specific optimization, and cross-cultural design language.",
                 achievements: [
-                    "Increased campaign engagement by 45% through visual refinement",
-                    "Adapted designs for culturally accurate Francophone markets",
-                    "Developed platform-specific visual optimizations",
-                    "Managed remote design operations for French client"
+                    "Drove 45% increase in campaign engagement through refined visual systems",
+                    "Adapted brand identity for culturally accurate Francophone market targeting",
+                    "Developed platform-specific optimizations for digital and social channels",
+                    "Built scalable design templates enabling rapid campaign deployment"
                 ],
-                role: "Senior Graphics Designer (Francophone Markets)",
-                client: "Leverage Systems (France)",
-                tools: ["French Localization", "Typography", "Layout Design", "Cultural Adaptation"]
+                role: "Senior Graphics Designer / Campaign Design Lead",
+                client: "Project Moov — Francophone Africa & Europe",
+                tools: ["French Localization", "Typography", "Layout Design", "Cultural Adaptation", "Campaign Design"]
             }
         };
 
@@ -1072,6 +1304,15 @@
                 span.textContent = tool;
                 toolsContainer.appendChild(span);
             });
+
+            // Case Study Link
+            const caseStudyBtn = document.getElementById('modalCaseStudyBtn');
+            if (data.url) {
+                caseStudyBtn.href = data.url;
+                caseStudyBtn.style.display = 'flex';
+            } else {
+                caseStudyBtn.style.display = 'none';
+            }
             
             // Show modal
             modal.classList.remove('hidden');
