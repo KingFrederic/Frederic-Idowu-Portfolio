@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Frédéric Idowu Oluwasola</title>
+    <meta name="description" content="The professional journey of Frédéric Idowu Oluwasola — from University of Lagos to the African Union, GIZ, federal government, and AfroAngle California.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="shared.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="antialiased selection:bg-red-600 selection:text-white">
+
+<div class="noise-overlay"></div>
+
+<!-- NAV -->
+<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 nav-blur px-4 md:px-10 py-4">
+    <div class="flex items-center justify-between max-w-7xl mx-auto">
+        <a href="index.html" class="flex items-center gap-2">
+            <span class="font-cinematic text-3xl text-red-600 tracking-wider">FREDERIC</span>
+            <span class="hidden md:block text-[10px] text-gray-400 uppercase tracking-widest mt-2 leading-none">Idowu<br><span class="text-red-500/70">Oluwasola</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-7 text-sm font-medium">
+            <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
+            <a href="work.html" class="text-gray-300 hover:text-white transition-colors">Work</a>
+            <a href="speaking.html" class="text-gray-300 hover:text-white transition-colors">Speaking</a>
+            <a href="about.html" class="text-red-500">About</a>
+            <a href="contact.html" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+            <a href="contact.html" class="btn-gold px-5 py-2 rounded-md font-bold text-sm flex items-center gap-2">
+                <i data-lucide="calendar" class="w-4 h-4"></i> Book Now
+            </a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden text-white p-1"><i data-lucide="menu" class="w-6 h-6"></i></button>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="fixed inset-0 bg-black z-40 transform translate-x-full transition-transform duration-300 md:hidden">
+    <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl font-cinematic">
+        <a href="index.html" class="hover:text-red-500 transition-colors">HOME</a>
+        <a href="work.html" class="hover:text-red-500 transition-colors">WORK</a>
+        <a href="speaking.html" class="hover:text-red-500 transition-colors">SPEAKING</a>
+        <a href="about.html" class="text-red-500">ABOUT</a>
+        <a href="contact.html" class="hover:text-red-500 transition-colors">CONTACT</a>
+    </div>
+    <button id="closeMobileMenu" class="absolute top-6 right-6 text-white"><i data-lucide="x" class="w-8 h-8"></i></button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO BANNER
+════════════════════════════════════════════════════════ -->
+<header class="relative pt-28 pb-20 px-4 md:px-12 overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070&auto=format&fit=crop');"></div>
+    <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 100%);"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="section-label fade-in-up">The Man Behind The Work</div>
+                <h1 class="font-cinematic leading-none mb-6 fade-in-up delay-100" style="font-size: clamp(3rem, 8vw, 6rem);">
+                    FRÉDÉRIC<br>IDOWU<br>
+                    <span class="gold-text">OLUWASOLA</span>
+                </h1>
+                <p class="text-gray-300 leading-relaxed mb-4 fade-in-up delay-200">
+                    Visual Design Director. Public Speaker. Corporate Communications Specialist.
+                    A multilingual creative strategist who has spent 7+ years building visual authority
+                    for institutions that shape Africa's future.
+                </p>
+                <p class="text-gray-400 leading-relaxed fade-in-up delay-300">
+                    Born in Nigeria. Educated at the University of Lagos. Trusted by the African Union.
+                    Deployed across 12+ nations. Now directing media technology from California while
+                    remaining deeply rooted in African storytelling and global excellence.
+                </p>
+            </div>
+            <div class="fade-in-up delay-400">
+                <div class="bg-gray-900/60 border border-gray-800 rounded-2xl p-8 space-y-5">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-red-600/20 rounded-xl flex items-center justify-center">
+                            <i data-lucide="graduation-cap" class="w-6 h-6 text-red-500"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white">Bachelor of Arts — French Studies</p>
+                            <p class="text-sm text-gray-400">University of Lagos, Nigeria</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background:rgba(201,168,76,0.12);">
+                            <i data-lucide="languages" class="w-6 h-6" style="color:var(--gold);"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white">5 Languages</p>
+                            <p class="text-sm text-gray-400">English · French · Yoruba · Dioula · Pidgin</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-red-600/20 rounded-xl flex items-center justify-center">
+                            <i data-lucide="globe-2" class="w-6 h-6 text-red-500"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white">12+ Nations</p>
+                            <p class="text-sm text-gray-400">Cross-border projects across Africa, Europe &amp; North America</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-red-600/20 rounded-xl flex items-center justify-center">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-red-500"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white">Lagos, Nigeria · California, USA</p>
+                            <p class="text-sm text-gray-400">Remote-ready · Available globally</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════
+     PROFESSIONAL EXPERIENCE TIMELINE
+════════════════════════════════════════════════════════ -->
+<section class="py-24 px-4 md:px-12 bg-gradient-to-b from-black to-gray-950">
+    <div class="max-w-6xl mx-auto">
+        <div class="section-label reveal">Career Arc</div>
+        <h2 class="font-cinematic text-4xl md:text-5xl mb-14 reveal">Professional Experience</h2>
+
+        <div class="relative">
+            <!-- Timeline Line -->
+            <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 timeline-line transform md:-translate-x-1/2"></div>
+
+            <div class="space-y-14">
+
+                <!-- AfroAngle — CURRENT -->
+                <div class="relative flex flex-col md:flex-row items-start md:items-center gap-8 group reveal">
+                    <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-red-600 rounded-full transform -translate-x-1/2 border-4 border-black z-10 group-hover:scale-150 transition-transform"></div>
+                    <div class="md:w-1/2 md:text-right md:pr-12 pl-12 md:pl-0">
+                        <span class="text-red-500 font-semibold text-sm">Dec 2025 – Present</span>
+                        <h3 class="text-2xl font-bold mt-1">Communications &amp; Media Technology Director</h3>
+                        <p class="text-gray-400 font-semibold">AfroAngle · California, United States</p>
+                        <ul class="mt-3 space-y-1 text-sm text-gray-400">
+                            <li>• Led 5-country West Africa documentary expedition</li>
+                            <li>• Nigeria · Benin · Togo · Ghana · Côte d'Ivoire</li>
+                            <li>• Brand, media, comms &amp; visual technology direction</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 pl-12">
+                        <div class="bg-gray-800/50 p-5 rounded-xl border border-gray-700">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="bg-red-600 text-xs px-2 py-1 rounded font-semibold">Current</span>
+                                <span class="text-xs text-gray-400">California, USA · Remote &amp; Field</span>
+                            </div>
+                            <p class="text-sm text-gray-300">Directing communications strategy, media production, and visual technology systems for a California-based African media platform. Led a cross-border media team on a landmark documentary shoot across 5 West African nations.</p>
+                            <div class="mt-3 pt-3 border-t border-gray-700">
+                                <p class="text-xs text-red-400 font-bold">Major Milestone</p>
+                                <p class="text-xs text-gray-400 mt-1">Led field media team documenting the centuries-long exodus of the Ejigbo LGA indigenous community (Osun State, Nigeria) to Côte d'Ivoire — a groundbreaking historical diaspora documentary.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tikera Africa -->
+                <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-8 group reveal">
+                    <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-orange-500 rounded-full transform -translate-x-1/2 border-4 border-black z-10 group-hover:scale-150 transition-transform"></div>
+                    <div class="md:w-1/2 md:text-left md:pl-12 pl-12">
+                        <span class="text-orange-400 font-semibold text-sm">Feb 2025 – Oct 2025</span>
+                        <h3 class="text-2xl font-bold mt-1">Senior Graphics Designer / Design Lead</h3>
+                        <p class="text-gray-400 font-semibold">Tikera Africa · Lagos, Nigeria</p>
+                        <ul class="mt-3 space-y-1 text-sm text-gray-400">
+                            <li>• AU &amp; GIZ Partnership · 12+ African Countries</li>
+                            <li>• 50+ Design Assets Monthly · Multilingual Standards</li>
+                            <li>• Cross-functional Team Leadership</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 md:pr-12 pl-12 md:pl-0 md:text-right">
+                        <div class="bg-gray-800/50 p-5 rounded-xl border border-gray-700 inline-block text-left">
+                            <div class="flex items-center gap-2 mb-2 justify-end">
+                                <span class="text-xs text-gray-400">West African Initiatives</span>
+                                <span class="bg-orange-600 text-xs px-2 py-1 rounded font-semibold">Completed</span>
+                            </div>
+                            <p class="text-sm text-gray-300">Visual identity direction for AU-GIZ international development programs across 12 African countries, with multilingual brand governance and cross-functional team leadership.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Afri'Talent -->
+                <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-8 group reveal">
+                    <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-blue-600 rounded-full transform -translate-x-1/2 border-4 border-black z-10 group-hover:scale-150 transition-transform"></div>
+                    <div class="md:w-1/2 md:text-left md:pl-12 pl-12">
+                        <span class="text-blue-500 font-semibold text-sm">2025</span>
+                        <h3 class="text-2xl font-bold mt-1">Design Director</h3>
+                        <p class="text-gray-400 font-semibold">Afri'Talent Bootcamp · Pan-African</p>
+                        <p class="mt-3 text-sm text-gray-400">Full-scale design systems for continental talent program. End-to-end visual assets for 12 countries including official documents, workbooks, signage, and digital creatives.</p>
+                    </div>
+                    <div class="md:w-1/2 md:pr-12 pl-12 md:pl-0 md:text-right">
+                        <div class="bg-gray-800/50 p-5 rounded-xl border border-gray-700 inline-block text-left">
+                            <div class="flex items-center gap-2 mb-2 justify-end">
+                                <span class="text-xs text-gray-400">AU · GIZ · Fit Africa</span>
+                                <span class="bg-blue-600 text-xs px-2 py-1 rounded font-semibold">Program</span>
+                            </div>
+                            <p class="text-sm text-gray-300">Event &amp; Campaign Design Leadership</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reimagining Hope -->
+                <div class="relative flex flex-col md:flex-row items-start md:items-center gap-8 group reveal">
+                    <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-purple-600 rounded-full transform -translate-x-1/2 border-4 border-black z-10 group-hover:scale-150 transition-transform"></div>
+                    <div class="md:w-1/2 md:text-right md:pr-12 pl-12 md:pl-0">
+                        <span class="text-purple-500 font-semibold text-sm">2024</span>
+                        <h3 class="text-2xl font-bold mt-1">Graphics Design Director</h3>
+                        <p class="text-gray-400 font-semibold">Reimagining Hope Residency</p>
+                        <p class="mt-3 text-sm text-gray-400">Federal Ministry of Art, Culture &amp; Creative Economy. Nigeria's first federally funded national art residency. Complete visual identity development and governance.</p>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 pl-12">
+                        <div class="bg-gray-800/50 p-5 rounded-xl border border-gray-700">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="bg-purple-600 text-xs px-2 py-1 rounded font-semibold">Government</span>
+                                <span class="text-xs text-gray-400">National Cultural Flagship</span>
+                            </div>
+                            <p class="text-sm text-gray-300">Venue branding, merchandise, digital campaigns, print materials</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FBUX & Project Moov -->
+                <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-8 group reveal">
+                    <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-green-600 rounded-full transform -translate-x-1/2 border-4 border-black z-10 group-hover:scale-150 transition-transform"></div>
+                    <div class="md:w-1/2 md:text-left md:pl-12 pl-12">
+                        <span class="text-green-500 font-semibold text-sm">2022 – 2024</span>
+                        <h3 class="text-2xl font-bold mt-1">Senior Graphics Designer</h3>
+                        <p class="text-gray-400 font-semibold">FBUX Consulting &amp; Project Moov</p>
+                        <p class="mt-3 text-sm text-gray-400">Remote design leadership for US and Francophone African markets. Brand identity systems, culturally adapted campaign design, and a +45% engagement increase through precision visual execution.</p>
+                    </div>
+                    <div class="md:w-1/2 md:pr-12 pl-12 md:pl-0 md:text-right">
+                        <div class="bg-gray-800/50 p-5 rounded-xl border border-gray-700 inline-block text-left">
+                            <div class="flex items-center gap-2 mb-2 justify-end">
+                                <span class="text-xs text-gray-400">USA · Francophone Africa</span>
+                                <span class="bg-green-600 text-xs px-2 py-1 rounded font-semibold">International</span>
+                            </div>
+                            <p class="text-sm text-gray-300">Houston, TX · Abidjan · Remote</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Claren Davis -->
+                <div class="relative flex flex-col md:flex-row items-start md:items-center gap-8 group reveal">
+                    <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-gray-600 rounded-full transform -translate-x-1/2 border-4 border-black z-10 group-hover:scale-150 transition-transform"></div>
+                    <div class="md:w-1/2 md:text-right md:pr-12 pl-12 md:pl-0">
+                        <span class="text-gray-500 font-semibold text-sm">2017 – Present</span>
+                        <h3 class="text-2xl font-bold mt-1">Creative Lead</h3>
+                        <p class="text-gray-400 font-semibold">Claren Davis Media</p>
+                        <p class="mt-3 text-sm text-gray-400">Logo design, brochures, web visuals, campaign assets. Client design projects from concept to final production.</p>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 pl-12">
+                        <div class="bg-gray-800/50 p-5 rounded-xl border border-gray-700">
+                            <span class="bg-gray-600 text-xs px-2 py-1 rounded font-semibold">Agency</span>
+                            <p class="text-sm text-gray-300 mt-2">Diverse client portfolio maintenance</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     DESIGN ARSENAL
+════════════════════════════════════════════════════════ -->
+<section class="py-20 px-4 md:px-12 bg-black">
+    <div class="max-w-6xl mx-auto">
+        <div class="section-label reveal">Tools &amp; Expertise</div>
+        <h2 class="font-cinematic text-4xl md:text-5xl mb-12 reveal">Design Arsenal</h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <!-- Design & Visual -->
+            <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-red-600/50 transition-colors group reveal">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="p-3 bg-red-600/20 rounded-lg group-hover:bg-red-600/30 transition-colors">
+                        <i data-lucide="pen-tool" class="w-6 h-6 text-red-500"></i>
+                    </div>
+                    <h3 class="font-cinematic text-2xl">Design &amp; Visual</h3>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between py-2 border-b border-gray-800">
+                        <span class="text-gray-300 text-sm">Adobe Photoshop</span>
+                        <div class="flex gap-1"><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div></div>
+                    </div>
+                    <div class="flex items-center justify-between py-2 border-b border-gray-800">
+                        <span class="text-gray-300 text-sm">Adobe Illustrator</span>
+                        <div class="flex gap-1"><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div></div>
+                    </div>
+                    <div class="flex items-center justify-between py-2 border-b border-gray-800">
+                        <span class="text-gray-300 text-sm">Adobe InDesign</span>
+                        <div class="flex gap-1"><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-gray-700 rounded-full"></div></div>
+                    </div>
+                    <div class="flex items-center justify-between py-2 border-b border-gray-800">
+                        <span class="text-gray-300 text-sm">CorelDraw</span>
+                        <div class="flex gap-1"><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-gray-700 rounded-full"></div></div>
+                    </div>
+                    <div class="flex items-center justify-between py-2">
+                        <span class="text-gray-300 text-sm">Canva</span>
+                        <div class="flex gap-1"><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Motion & Video -->
+            <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-red-600/50 transition-colors group reveal">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="p-3 bg-red-600/20 rounded-lg group-hover:bg-red-600/30 transition-colors">
+                        <i data-lucide="video" class="w-6 h-6 text-red-500"></i>
+                    </div>
+                    <h3 class="font-cinematic text-2xl">Motion &amp; Video</h3>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between py-2 border-b border-gray-800">
+                        <span class="text-gray-300 text-sm">After Effects</span>
+                        <div class="flex gap-1"><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-gray-700 rounded-full"></div></div>
+                    </div>
+                    <div class="flex items-center justify-between py-2 border-b border-gray-800">
+                        <span class="text-gray-300 text-sm">Premiere Pro</span>
+                        <div class="flex gap-1"><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-gray-700 rounded-full"></div></div>
+                    </div>
+                    <div class="flex items-center justify-between py-2">
+                        <span class="text-gray-300 text-sm">DaVinci Resolve</span>
+                        <div class="flex gap-1"><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-red-600 rounded-full"></div><div class="w-2 h-2 bg-gray-700 rounded-full"></div><div class="w-2 h-2 bg-gray-700 rounded-full"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Languages & Communication -->
+            <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-red-600/50 transition-colors group reveal">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="p-3 bg-red-600/20 rounded-lg group-hover:bg-red-600/30 transition-colors">
+                        <i data-lucide="globe-2" class="w-6 h-6 text-red-500"></i>
+                    </div>
+                    <h3 class="font-cinematic text-2xl">Languages &amp; Workflow</h3>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-xs font-bold text-gray-500 mb-2 tracking-widest">LANGUAGES</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">English (Native)</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">French (Fluent)</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">Yoruba</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">Dioula</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">Pidgin</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">Spanish (Basic)</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-gray-500 mb-2 tracking-widest">WORKFLOW</h4>
+                        <ul class="space-y-1 text-sm text-gray-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-red-500"></i> AI-Assisted Design</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-red-500"></i> Asset Library Management</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-red-500"></i> Multi-Format Export Systems</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-red-500"></i> Brand Template Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     WHY CHOOSE FREDERIC
+════════════════════════════════════════════════════════ -->
+<section class="py-20 px-4 md:px-12 bg-gradient-to-b from-black to-gray-950">
+    <div class="max-w-6xl mx-auto">
+        <div class="section-label reveal">The Difference</div>
+        <h2 class="font-cinematic text-4xl md:text-5xl mb-4 reveal">Why Global Organizations Choose Frédéric</h2>
+        <p class="text-gray-400 mb-12 max-w-2xl reveal">Most designers make things look good. I make brands look authoritative, trustworthy, and ready to lead.</p>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="value-card rounded-xl p-7 reveal">
+                <div class="w-12 h-12 bg-red-600/20 rounded-lg flex items-center justify-center mb-5">
+                    <i data-lucide="shield" class="w-6 h-6 text-red-500"></i>
+                </div>
+                <h3 class="font-cinematic text-2xl mb-3">Institutional Calibre</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Designed for the African Union, GIZ, Federal Government ministries, and a California media house. Work that meets the highest standards of institutional visual excellence.</p>
+            </div>
+            <div class="value-card rounded-xl p-7 reveal">
+                <div class="w-12 h-12 bg-red-600/20 rounded-lg flex items-center justify-center mb-5">
+                    <i data-lucide="trending-up" class="w-6 h-6 text-red-500"></i>
+                </div>
+                <h3 class="font-cinematic text-2xl mb-3">Design That Performs</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">45% campaign engagement increase. 50+ assets monthly. Led media teams across 5 West African nations. Work that measurably moves people.</p>
+            </div>
+            <div class="value-card rounded-xl p-7 reveal">
+                <div class="w-12 h-12 bg-red-600/20 rounded-lg flex items-center justify-center mb-5">
+                    <i data-lucide="globe-2" class="w-6 h-6 text-red-500"></i>
+                </div>
+                <h3 class="font-cinematic text-2xl mb-3">Cross-Cultural Fluency</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">English, French, Yoruba, Dioula. On-the-ground in Nigeria, Benin, Togo, Ghana, and Côte d'Ivoire. Understanding audiences at a human level.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 px-4 md:px-12 border-t border-gray-900 text-center bg-black">
+    <div class="max-w-2xl mx-auto reveal">
+        <h2 class="font-cinematic text-4xl md:text-5xl mb-4">Let's Work Together</h2>
+        <p class="text-gray-400 mb-8">Whether you need design direction, a keynote speaker, or a communications strategist — the conversation starts here.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="contact.html" class="btn-gold inline-flex items-center justify-center gap-3 px-10 py-4 rounded-md font-bold text-lg">
+                <i data-lucide="mail" class="w-5 h-5"></i> Get In Touch
+            </a>
+            <a href="work.html" class="btn-ghost text-white inline-flex items-center justify-center gap-3 px-10 py-4 rounded-md font-semibold text-lg">
+                <i data-lucide="briefcase" class="w-5 h-5"></i> View Portfolio
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black border-t border-gray-900 py-10 px-4 md:px-12">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-5">
+        <div>
+            <span class="font-cinematic text-2xl text-red-600 block">FREDERIC IDOWU</span>
+            <span class="text-xs tracking-widest uppercase" style="color:var(--gold);opacity:0.7;">Oluwasola</span>
+        </div>
+        <div class="flex gap-6 text-sm text-gray-500">
+            <a href="index.html" class="hover:text-white transition-colors">Home</a>
+            <a href="work.html" class="hover:text-white transition-colors">Work</a>
+            <a href="speaking.html" class="hover:text-white transition-colors">Speaking</a>
+            <a href="about.html" class="hover:text-white transition-colors">About</a>
+            <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+        </div>
+        <span class="text-gray-700 text-xs">© 2025 Frédéric Idowu Oluwasola</span>
+    </div>
+</footer>
+
+<script>
+lucide.createIcons();
+
+document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.remove('translate-x-full');
+});
+document.getElementById('closeMobileMenu').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.add('translate-x-full');
+});
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
