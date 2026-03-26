@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Frédéric Idowu Oluwasola</title>
+    <meta name="description" content="Book Frédéric Idowu for design projects, keynote speaking, or corporate communications engagements. Based in Lagos, Nigeria — available globally.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="shared.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="antialiased selection:bg-red-600 selection:text-white">
+
+<div class="noise-overlay"></div>
+
+<!-- NAV -->
+<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 nav-blur px-4 md:px-10 py-4">
+    <div class="flex items-center justify-between max-w-7xl mx-auto">
+        <a href="index.html" class="flex items-center gap-2">
+            <span class="font-cinematic text-3xl text-red-600 tracking-wider">FREDERIC</span>
+            <span class="hidden md:block text-[10px] text-gray-400 uppercase tracking-widest mt-2 leading-none">Idowu<br><span class="text-red-500/70">Oluwasola</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-7 text-sm font-medium">
+            <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
+            <a href="work.html" class="text-gray-300 hover:text-white transition-colors">Work</a>
+            <a href="speaking.html" class="text-gray-300 hover:text-white transition-colors">Speaking</a>
+            <a href="about.html" class="text-gray-300 hover:text-white transition-colors">About</a>
+            <a href="contact.html" class="text-red-500">Contact</a>
+            <a href="contact.html" class="btn-gold px-5 py-2 rounded-md font-bold text-sm flex items-center gap-2">
+                <i data-lucide="calendar" class="w-4 h-4"></i> Book Now
+            </a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden text-white p-1"><i data-lucide="menu" class="w-6 h-6"></i></button>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="fixed inset-0 bg-black z-40 transform translate-x-full transition-transform duration-300 md:hidden">
+    <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl font-cinematic">
+        <a href="index.html" class="hover:text-red-500 transition-colors">HOME</a>
+        <a href="work.html" class="hover:text-red-500 transition-colors">WORK</a>
+        <a href="speaking.html" class="hover:text-red-500 transition-colors">SPEAKING</a>
+        <a href="about.html" class="hover:text-red-500 transition-colors">ABOUT</a>
+        <a href="contact.html" class="text-red-500">CONTACT</a>
+    </div>
+    <button id="closeMobileMenu" class="absolute top-6 right-6 text-white"><i data-lucide="x" class="w-8 h-8"></i></button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO BANNER
+════════════════════════════════════════════════════════ -->
+<header class="relative pt-32 pb-20 px-4 md:px-12 overflow-hidden">
+    <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(0,0,0,0.98) 0%, rgba(20,0,0,0.92) 100%);"></div>
+    <div class="absolute inset-0 opacity-5 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop');"></div>
+    <div class="absolute top-0 left-0 w-full h-px" style="background: linear-gradient(90deg, transparent, var(--red), transparent);"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto">
+        <div class="section-label fade-in-up">Let's Connect</div>
+        <h1 class="font-cinematic leading-none mb-6 fade-in-up delay-100" style="font-size: clamp(3rem, 8vw, 6.5rem);">
+            START THE<br><span class="text-red-500">CONVERSATION.</span>
+        </h1>
+        <p class="text-gray-300 max-w-xl leading-relaxed fade-in-up delay-200 text-lg">
+            Whether you're launching a brand, booking a speaker, or building a communications strategy
+            that moves at the highest level — this is where it begins.
+        </p>
+    </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════
+     MAIN CONTACT AREA
+════════════════════════════════════════════════════════ -->
+<section class="py-16 px-4 md:px-12 bg-black">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-14">
+
+            <!-- LEFT: Contact Form -->
+            <div class="reveal">
+                <div class="section-label mb-6">Send a Brief</div>
+
+                <form id="contactForm" action="mailto:fredericidowu@gmail.com" method="GET" enctype="text/plain" class="space-y-5">
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">First Name</label>
+                            <input type="text" name="first_name" placeholder="Your first name" required
+                                class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-red-600 focus:outline-none transition-colors text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Last Name</label>
+                            <input type="text" name="last_name" placeholder="Your last name"
+                                class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-red-600 focus:outline-none transition-colors text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Email Address</label>
+                        <input type="email" name="email" placeholder="your@email.com" required
+                            class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-red-600 focus:outline-none transition-colors text-sm">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Organization / Company</label>
+                        <input type="text" name="organization" placeholder="Your organization (optional)"
+                            class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-red-600 focus:outline-none transition-colors text-sm">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Engagement Type</label>
+                        <select name="type" class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white focus:border-red-600 focus:outline-none transition-colors text-sm appearance-none" style="background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23808080' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 12px center;">
+                            <option value="" disabled selected class="text-gray-500">Select engagement type</option>
+                            <option value="Brand Design Project">Brand Design Project</option>
+                            <option value="Keynote Speaking">Keynote Speaking</option>
+                            <option value="Panel Moderation">Panel Moderation</option>
+                            <option value="Workshop / Masterclass">Workshop / Masterclass</option>
+                            <option value="Corporate Communications Advisory">Corporate Communications Advisory</option>
+                            <option value="Design Consulting">Design Consulting</option>
+                            <option value="Media / Documentary Production">Media / Documentary Production</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Your Brief</label>
+                        <textarea name="body" rows="5" placeholder="Tell Frédéric about your project, event, or engagement. The more detail you share, the better he can assess fit and availability." required
+                            class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-red-600 focus:outline-none transition-colors text-sm resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-red w-full text-white py-4 rounded-lg font-bold text-base flex items-center justify-center gap-3">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                        Send Your Brief
+                    </button>
+
+                    <p class="text-xs text-gray-600 text-center">This will open your email client. Alternatively, email directly to <a href="mailto:fredericidowu@gmail.com" class="text-red-500 hover:underline">fredericidowu@gmail.com</a></p>
+                </form>
+            </div>
+
+            <!-- RIGHT: Contact Details + Availability -->
+            <div class="space-y-8 reveal">
+
+                <!-- Availability Status -->
+                <div class="bg-green-950/40 border border-green-800/40 rounded-xl p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-3 h-3 bg-green-400 rounded-full available-pulse"></div>
+                        <span class="font-semibold text-green-400">Currently Available</span>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Frédéric is currently serving as Communications &amp; Media Technology Director at AfroAngle (California) and is open to select brand design, speaking, and communications consulting engagements globally.
+                    </p>
+                </div>
+
+                <!-- Direct Contact -->
+                <div>
+                    <h3 class="font-cinematic text-2xl mb-5">Direct Contact</h3>
+                    <div class="space-y-4">
+                        <a href="mailto:fredericidowu@gmail.com" class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 bg-gray-900 border border-gray-800 rounded-xl flex items-center justify-center group-hover:border-red-600/50 transition-colors flex-shrink-0">
+                                <i data-lucide="mail" class="w-5 h-5 text-red-500"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase tracking-widest mb-0.5">Email</p>
+                                <p class="text-white font-medium group-hover:text-red-400 transition-colors">fredericidowu@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <a href="tel:+2347062273466" class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 bg-gray-900 border border-gray-800 rounded-xl flex items-center justify-center group-hover:border-red-600/50 transition-colors flex-shrink-0">
+                                <i data-lucide="phone" class="w-5 h-5 text-red-500"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase tracking-widest mb-0.5">Phone / WhatsApp</p>
+                                <p class="text-white font-medium group-hover:text-red-400 transition-colors">+234 706 227 3466</p>
+                            </div>
+                        </a>
+
+                        <a href="https://linkedin.com/in/fredericidowu" target="_blank" class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 bg-gray-900 border border-gray-800 rounded-xl flex items-center justify-center group-hover:border-red-600/50 transition-colors flex-shrink-0">
+                                <i data-lucide="linkedin" class="w-5 h-5 text-red-500"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase tracking-widest mb-0.5">LinkedIn</p>
+                                <p class="text-white font-medium group-hover:text-red-400 transition-colors">linkedin.com/in/fredericidowu</p>
+                            </div>
+                        </a>
+
+                        <a href="https://bit.ly/fredfolio" target="_blank" class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 bg-gray-900 border border-gray-800 rounded-xl flex items-center justify-center group-hover:border-red-600/50 transition-colors flex-shrink-0">
+                                <i data-lucide="briefcase" class="w-5 h-5 text-red-500"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase tracking-widest mb-0.5">Portfolio</p>
+                                <p class="text-white font-medium group-hover:text-red-400 transition-colors">bit.ly/fredfolio</p>
+                            </div>
+                        </a>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gray-900 border border-gray-800 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-red-500"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase tracking-widest mb-0.5">Location</p>
+                                <p class="text-white font-medium">Lagos, Nigeria · California, USA</p>
+                                <p class="text-xs text-gray-500">Remote-ready · Available globally</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What to Expect -->
+                <div class="bg-gray-900/60 border border-gray-800 rounded-xl p-6">
+                    <h3 class="font-cinematic text-xl mb-4">What Happens Next</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-sm text-gray-400">
+                            <span class="w-6 h-6 bg-red-600/20 text-red-500 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">1</span>
+                            You send your brief via this form or email directly.
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-gray-400">
+                            <span class="w-6 h-6 bg-red-600/20 text-red-500 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">2</span>
+                            Frédéric reviews your request and responds within 24–48 hours.
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-gray-400">
+                            <span class="w-6 h-6 bg-red-600/20 text-red-500 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">3</span>
+                            A discovery call is scheduled to explore scope, fit, and expectations.
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-gray-400">
+                            <span class="w-6 h-6 bg-red-600/20 text-red-500 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">4</span>
+                            Proposal and engagement terms are presented. Work begins.
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     ENGAGEMENT TYPES — QUICK CARDS
+════════════════════════════════════════════════════════ -->
+<section class="py-20 px-4 md:px-12 bg-gradient-to-b from-black to-gray-950">
+    <div class="max-w-6xl mx-auto">
+        <div class="section-label reveal">Engagement Types</div>
+        <h2 class="font-cinematic text-4xl md:text-5xl mb-12 reveal">How Can Frédéric Help?</h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <div class="value-card rounded-xl p-7 reveal">
+                <div class="w-12 h-12 bg-red-600/20 rounded-lg flex items-center justify-center mb-5">
+                    <i data-lucide="palette" class="w-6 h-6 text-red-500"></i>
+                </div>
+                <h3 class="font-cinematic text-2xl mb-3">Brand Design</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                    Full brand identity systems, campaign design, visual governance, and art direction
+                    for organizations that need to look as powerful as they are.
+                </p>
+                <ul class="text-xs text-gray-500 space-y-1">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-red-500"></i> Brand Identity &amp; Visual Systems</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-red-500"></i> Campaign Design &amp; Art Direction</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-red-500"></i> Event &amp; Print Design</li>
+                </ul>
+            </div>
+
+            <div class="value-card gold-card rounded-xl p-7 reveal" style="animation-delay:0.1s;">
+                <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-5" style="background:rgba(201,168,76,0.15);">
+                    <i data-lucide="mic" class="w-6 h-6" style="color:var(--gold);"></i>
+                </div>
+                <h3 class="font-cinematic text-2xl mb-3">Speaking &amp; Events</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                    Keynotes, panel moderation, and workshops for continental summits, diplomatic forums,
+                    corporate conferences, and leadership programs.
+                </p>
+                <ul class="text-xs text-gray-500 space-y-1">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3" style="color:var(--gold);"></i> Keynote Addresses</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3" style="color:var(--gold);"></i> Panel Moderation</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3" style="color:var(--gold);"></i> Masterclasses &amp; Workshops</li>
+                </ul>
+            </div>
+
+            <div class="value-card rounded-xl p-7 reveal" style="animation-delay:0.2s;">
+                <div class="w-12 h-12 bg-red-600/20 rounded-lg flex items-center justify-center mb-5">
+                    <i data-lucide="globe-2" class="w-6 h-6 text-red-500"></i>
+                </div>
+                <h3 class="font-cinematic text-2xl mb-3">Communications Strategy</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                    Institutional messaging, media strategy, executive communications coaching,
+                    and retained advisory for organizations that operate at the highest level.
+                </p>
+                <ul class="text-xs text-gray-500 space-y-1">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-red-500"></i> Messaging Architecture</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-red-500"></i> Executive Comms Coaching</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-red-500"></i> Media &amp; Content Strategy</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FINAL CTA STRIP
+════════════════════════════════════════════════════════ -->
+<section class="relative py-24 px-4 md:px-12 overflow-hidden border-t border-gray-900">
+    <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(229,9,20,0.06) 0%, rgba(0,0,0,0.98) 60%);"></div>
+    <div class="relative z-10 max-w-2xl mx-auto text-center reveal">
+        <h2 class="font-cinematic text-5xl md:text-6xl mb-5">
+            Don't Let Your Brand<br>Speak Below Its Worth.
+        </h2>
+        <p class="text-gray-400 text-base mb-8 leading-relaxed">
+            Every day without the right visual identity, the right narrative, or the right voice
+            at the table is a day your organization is being underestimated.
+            Frédéric fixes that.
+        </p>
+        <a href="mailto:fredericidowu@gmail.com" class="btn-red inline-flex items-center gap-3 px-10 py-4 rounded-md font-bold text-lg text-white">
+            <i data-lucide="mail" class="w-5 h-5"></i> fredericidowu@gmail.com
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black border-t border-gray-900 py-14 px-4 md:px-12">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-4 gap-10 mb-10">
+            <div class="md:col-span-2">
+                <span class="font-cinematic text-3xl text-red-600 block">FREDERIC IDOWU</span>
+                <span class="text-xs tracking-widest uppercase block mb-3" style="color:var(--gold);opacity:0.7;">Oluwasola</span>
+                <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
+                    Visual Design Director · Public Speaker · Corporate Communications Specialist.
+                    Operating at the intersection of aesthetics, strategy, and diplomacy.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold tracking-widest uppercase text-gray-500 mb-4">Navigation</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="work.html" class="hover:text-white transition-colors">Work</a></li>
+                    <li><a href="speaking.html" class="hover:text-white transition-colors">Speaking</a></li>
+                    <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold tracking-widest uppercase text-gray-500 mb-4">Contact</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="mailto:fredericidowu@gmail.com" class="hover:text-white transition-colors">fredericidowu@gmail.com</a></li>
+                    <li><a href="tel:+2347062273466" class="hover:text-white transition-colors">+234 706 227 3466</a></li>
+                    <li>Lagos, Nigeria · Remote-Ready</li>
+                    <li>
+                        <a href="https://linkedin.com/in/fredericidowu" target="_blank" class="hover:text-white transition-colors flex items-center gap-2 mt-1">
+                            <i data-lucide="linkedin" class="w-4 h-4 text-red-500"></i> LinkedIn
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-900 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-gray-600 text-xs">
+            <span>© 2025 Frédéric Idowu Oluwasola. All rights reserved.</span>
+            <span class="text-gray-700">Crafted with intention. Every pixel has a purpose.</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+lucide.createIcons();
+
+document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.remove('translate-x-full');
+});
+document.getElementById('closeMobileMenu').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.add('translate-x-full');
+});
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

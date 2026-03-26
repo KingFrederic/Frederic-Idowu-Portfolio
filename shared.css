@@ -1,0 +1,269 @@
+/* ===========================
+   FREDERIC IDOWU — SHARED CSS
+   =========================== */
+
+:root {
+    --red:    #E50914;
+    --red-2:  #f40612;
+    --gold:   #C9A84C;
+    --gold-2: #e8c96b;
+    --dark:   #141414;
+    --black:  #000000;
+    --gray:   #808080;
+    --light:  #E5E5E5;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--black);
+    color: var(--light);
+    overflow-x: hidden;
+}
+
+.font-cinematic {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.02em;
+}
+
+.font-serif-display {
+    font-family: 'Playfair Display', serif;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gray); }
+
+/* ─── Navigation ─── */
+.nav-blur    { background: rgba(0,0,0,0.96); backdrop-filter: blur(12px); }
+.nav-transparent {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, transparent 100%);
+}
+
+/* ─── Buttons ─── */
+.btn-red {
+    background-color: var(--red);
+    transition: background 0.2s, transform 0.2s;
+}
+.btn-red:hover { background-color: var(--red-2); transform: scale(1.04); }
+
+.btn-gold {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-2) 100%);
+    color: #000;
+    transition: all 0.2s;
+}
+.btn-gold:hover { transform: scale(1.04); filter: brightness(1.1); }
+
+.btn-ghost {
+    background: rgba(109,109,110,0.45);
+    border: 1px solid rgba(255,255,255,0.25);
+    transition: background 0.2s, transform 0.2s;
+}
+.btn-ghost:hover { background: rgba(109,109,110,0.25); transform: scale(1.04); }
+
+/* ─── Text & Gradient ─── */
+.gradient-text {
+    background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.gold-text {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ─── Section Label ─── */
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--red);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+.section-label::before {
+    content: '';
+    width: 1.75rem;
+    height: 2px;
+    background: var(--red);
+}
+.section-label.gold-label { color: var(--gold); }
+.section-label.gold-label::before { background: var(--gold); }
+
+/* ─── Noise film grain ─── */
+.noise-overlay {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none; opacity: 0.028; z-index: 9999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ─── Animations ─── */
+.fade-in-up {
+    animation: fadeInUp 0.85s ease-out forwards;
+    opacity: 0;
+    transform: translateY(28px);
+}
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* ─── Reveal on scroll ─── */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── Stats bar ─── */
+.stats-bar {
+    background: rgba(18,18,18,0.98);
+    border-top: 1px solid rgba(229,9,20,0.28);
+    border-bottom: 1px solid rgba(229,9,20,0.12);
+}
+.stat-item { position: relative; }
+.stat-item:not(:last-child)::after {
+    content: ''; position: absolute;
+    right: 0; top: 20%; height: 60%; width: 1px;
+    background: rgba(255,255,255,0.1);
+}
+
+/* ─── Value Cards ─── */
+.value-card {
+    background: linear-gradient(135deg, rgba(229,9,20,0.07) 0%, rgba(18,18,18,0.92) 100%);
+    border: 1px solid rgba(229,9,20,0.18);
+    transition: border-color 0.3s, transform 0.3s, background 0.3s;
+}
+.value-card:hover {
+    border-color: rgba(229,9,20,0.55);
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, rgba(229,9,20,0.14) 0%, rgba(18,18,18,0.96) 100%);
+}
+.value-card.gold-card {
+    background: linear-gradient(135deg, rgba(201,168,76,0.07) 0%, rgba(18,18,18,0.92) 100%);
+    border: 1px solid rgba(201,168,76,0.2);
+}
+.value-card.gold-card:hover {
+    border-color: rgba(201,168,76,0.6);
+    background: linear-gradient(135deg, rgba(201,168,76,0.14) 0%, rgba(18,18,18,0.96) 100%);
+}
+
+/* ─── Skill Tag ─── */
+.skill-tag {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: all 0.3s;
+}
+.skill-tag:hover {
+    background: var(--red);
+    border-color: var(--red);
+    transform: translateY(-2px);
+}
+
+/* ─── Timeline ─── */
+.timeline-line {
+    background: linear-gradient(to bottom, var(--red), rgba(229,9,20,0.15));
+}
+
+/* ─── Hero Video ─── */
+.hero-video {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; z-index: 0;
+}
+.hero-overlay-left {
+    background: linear-gradient(105deg,
+        rgba(0,0,0,0.96) 0%,
+        rgba(0,0,0,0.80) 30%,
+        rgba(0,0,0,0.44) 60%,
+        rgba(0,0,0,0.12) 100%);
+}
+.hero-bottom-fade {
+    background: linear-gradient(to top, #000 0%, transparent 100%);
+    height: 180px;
+}
+
+/* ─── Available badge ─── */
+.available-pulse { animation: availPulse 2.5s ease infinite; }
+@keyframes availPulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+    50%      { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+}
+
+/* ─── Gold divider ─── */
+.gold-divider {
+    width: 3rem; height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+/* ─── Page Banner (sub-pages) ─── */
+.page-banner {
+    background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(20,20,20,0.9) 100%);
+    border-bottom: 1px solid rgba(229,9,20,0.2);
+}
+
+/* ─── Scroll indicator ─── */
+.scroll-indicator { animation: bounce 2.2s infinite; }
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50%      { transform: translateY(8px); }
+}
+
+/* ─── Modal ─── */
+.modal-backdrop { background: rgba(0,0,0,0.92); backdrop-filter: blur(6px); }
+
+/* ─── Project Card (Netflix style) ─── */
+.project-card {
+    transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+    transform-origin: center center;
+}
+.project-card:hover {
+    transform: scale(1.38);
+    z-index: 50;
+    box-shadow: 0 22px 44px rgba(0,0,0,0.85);
+}
+.project-card:hover .card-info { opacity: 1; transform: translateY(0); }
+.card-info {
+    opacity: 0; transform: translateY(10px);
+    transition: all 0.3s;
+    background: linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.65) 100%);
+}
+
+/* ─── Horizontal scroll ─── */
+.horizontal-scroll {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.horizontal-scroll::-webkit-scrollbar { display: none; }
+
+/* ─── Speaking topic card ─── */
+.topic-card {
+    background: rgba(18,18,18,0.9);
+    border: 1px solid rgba(201,168,76,0.15);
+    transition: border-color 0.3s, transform 0.3s;
+}
+.topic-card:hover {
+    border-color: rgba(201,168,76,0.5);
+    transform: translateY(-4px);
+}
+
+/* ─── Quote block ─── */
+.quote-block {
+    border-left: 3px solid var(--gold);
+    background: rgba(201,168,76,0.06);
+}
+
+/* ─── Mobile nav slide ─── */
+.mobile-nav-open  { transform: translateX(0); }
+.mobile-nav-close { transform: translateX(100%); }
