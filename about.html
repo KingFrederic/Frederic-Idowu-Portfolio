@@ -3,12 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#E50914">
     <title>About | Frédéric Idowu Oluwasola</title>
     <meta name="description" content="The professional journey of Frédéric Idowu Oluwasola — from University of Lagos to the African Union, GIZ, federal government, and AfroAngle California.">
+    <link rel="canonical" href="https://fredericidowu.com/about.html">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Frédéric Idowu Oluwasola">
+    <meta property="og:title" content="About | Frédéric Idowu Oluwasola">
+    <meta property="og:description" content="The professional journey of Frédéric Idowu Oluwasola — from University of Lagos to the African Union, GIZ, federal government, and AfroAngle California.">
+    <meta property="og:url" content="https://fredericidowu.com/about.html">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About | Frédéric Idowu Oluwasola">
+    <meta name="twitter:description" content="From University of Lagos to the African Union, GIZ, federal government, and AfroAngle California.">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23000'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-family='Georgia,serif' font-size='40' font-weight='700' fill='%23E50914' dominant-baseline='middle'%3EF%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- TODO: For production, build Tailwind locally instead of using CDN (https://tailwindcss.com/docs/installation) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="shared.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 <body class="antialiased selection:bg-red-600 selection:text-white">
 
@@ -17,7 +36,7 @@
 <!-- NAV -->
 <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 nav-blur px-4 md:px-10 py-4">
     <div class="flex items-center justify-between max-w-7xl mx-auto">
-        <a href="index.html" class="flex items-center gap-2">
+        <a href="index.html" class="flex items-center gap-2" aria-label="Frédéric Idowu Oluwasola — Home">
             <span class="font-cinematic text-3xl text-red-600 tracking-wider">FREDERIC</span>
             <span class="hidden md:block text-[10px] text-gray-400 uppercase tracking-widest mt-2 leading-none">Idowu<br><span class="text-red-500/70">Oluwasola</span></span>
         </a>
@@ -25,26 +44,27 @@
             <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
             <a href="work.html" class="text-gray-300 hover:text-white transition-colors">Work</a>
             <a href="speaking.html" class="text-gray-300 hover:text-white transition-colors">Speaking</a>
-            <a href="about.html" class="text-red-500">About</a>
+            <a href="about.html" class="text-red-500" aria-current="page">About</a>
             <a href="contact.html" class="text-gray-300 hover:text-white transition-colors">Contact</a>
             <a href="contact.html" class="btn-gold px-5 py-2 rounded-md font-bold text-sm flex items-center gap-2">
-                <i data-lucide="calendar" class="w-4 h-4"></i> Book Now
+                <i data-lucide="calendar" class="w-4 h-4" aria-hidden="true"></i> Book Now
             </a>
         </div>
-        <button id="mobileMenuBtn" class="md:hidden text-white p-1"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        <button id="mobileMenuBtn" class="md:hidden text-white p-1" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><i data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i></button>
     </div>
 </nav>
 
 <!-- Mobile Menu -->
-<div id="mobileMenu" class="fixed inset-0 bg-black z-40 transform translate-x-full transition-transform duration-300 md:hidden">
+<div id="mobileMenu" class="fixed inset-0 bg-black z-40 transform translate-x-full transition-transform duration-300 md:hidden" role="dialog" aria-modal="true" aria-label="Main menu" aria-hidden="true">
     <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl font-cinematic">
         <a href="index.html" class="hover:text-red-500 transition-colors">HOME</a>
         <a href="work.html" class="hover:text-red-500 transition-colors">WORK</a>
         <a href="speaking.html" class="hover:text-red-500 transition-colors">SPEAKING</a>
-        <a href="about.html" class="text-red-500">ABOUT</a>
+        <a href="about.html" class="text-red-500" aria-current="page">ABOUT</a>
         <a href="contact.html" class="hover:text-red-500 transition-colors">CONTACT</a>
+        <a href="contact.html" class="mt-4 btn-gold px-8 py-3 rounded-md text-base font-bold">Book Now</a>
     </div>
-    <button id="closeMobileMenu" class="absolute top-6 right-6 text-white"><i data-lucide="x" class="w-8 h-8"></i></button>
+    <button id="closeMobileMenu" class="absolute top-6 right-6 text-white" aria-label="Close menu"><i data-lucide="x" class="w-8 h-8" aria-hidden="true"></i></button>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -135,7 +155,7 @@
                 <div class="relative flex flex-col md:flex-row items-start md:items-center gap-8 group reveal">
                     <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-red-600 rounded-full transform -translate-x-1/2 border-4 border-black z-10 group-hover:scale-150 transition-transform"></div>
                     <div class="md:w-1/2 md:text-right md:pr-12 pl-12 md:pl-0">
-                        <span class="text-red-500 font-semibold text-sm">Dec 2025 – Present</span>
+                        <time datetime="2025-12" class="text-red-500 font-semibold text-sm">Dec 2025 – Present</time>
                         <h3 class="text-2xl font-bold mt-1">Communications &amp; Media Technology Director</h3>
                         <p class="text-gray-400 font-semibold">AfroAngle · California, United States</p>
                         <ul class="mt-3 space-y-1 text-sm text-gray-400">
@@ -163,7 +183,7 @@
                 <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-8 group reveal">
                     <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-orange-500 rounded-full transform -translate-x-1/2 border-4 border-black z-10 group-hover:scale-150 transition-transform"></div>
                     <div class="md:w-1/2 md:text-left md:pl-12 pl-12">
-                        <span class="text-orange-400 font-semibold text-sm">Feb 2025 – Oct 2025</span>
+                        <time datetime="2025-02/2025-10" class="text-orange-400 font-semibold text-sm">Feb 2025 – Oct 2025</time>
                         <h3 class="text-2xl font-bold mt-1">Senior Graphics Designer / Design Lead</h3>
                         <p class="text-gray-400 font-semibold">Tikera Africa · Lagos, Nigeria</p>
                         <ul class="mt-3 space-y-1 text-sm text-gray-400">
@@ -187,7 +207,7 @@
                 <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-8 group reveal">
                     <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-blue-600 rounded-full transform -translate-x-1/2 border-4 border-black z-10 group-hover:scale-150 transition-transform"></div>
                     <div class="md:w-1/2 md:text-left md:pl-12 pl-12">
-                        <span class="text-blue-500 font-semibold text-sm">2025</span>
+                        <time datetime="2025" class="text-blue-500 font-semibold text-sm">2025</time>
                         <h3 class="text-2xl font-bold mt-1">Design Director</h3>
                         <p class="text-gray-400 font-semibold">Afri'Talent Bootcamp · Pan-African</p>
                         <p class="mt-3 text-sm text-gray-400">Full-scale design systems for continental talent program. End-to-end visual assets for 12 countries including official documents, workbooks, signage, and digital creatives.</p>
@@ -207,7 +227,7 @@
                 <div class="relative flex flex-col md:flex-row items-start md:items-center gap-8 group reveal">
                     <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-purple-600 rounded-full transform -translate-x-1/2 border-4 border-black z-10 group-hover:scale-150 transition-transform"></div>
                     <div class="md:w-1/2 md:text-right md:pr-12 pl-12 md:pl-0">
-                        <span class="text-purple-500 font-semibold text-sm">2024</span>
+                        <time datetime="2024" class="text-purple-500 font-semibold text-sm">2024</time>
                         <h3 class="text-2xl font-bold mt-1">Graphics Design Director</h3>
                         <p class="text-gray-400 font-semibold">Reimagining Hope Residency</p>
                         <p class="mt-3 text-sm text-gray-400">Federal Ministry of Art, Culture &amp; Creative Economy. Nigeria's first federally funded national art residency. Complete visual identity development and governance.</p>
@@ -227,7 +247,7 @@
                 <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-8 group reveal">
                     <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-green-600 rounded-full transform -translate-x-1/2 border-4 border-black z-10 group-hover:scale-150 transition-transform"></div>
                     <div class="md:w-1/2 md:text-left md:pl-12 pl-12">
-                        <span class="text-green-500 font-semibold text-sm">2022 – 2024</span>
+                        <time datetime="2022/2024" class="text-green-500 font-semibold text-sm">2022 – 2024</time>
                         <h3 class="text-2xl font-bold mt-1">Senior Graphics Designer</h3>
                         <p class="text-gray-400 font-semibold">FBUX Consulting &amp; Project Moov</p>
                         <p class="mt-3 text-sm text-gray-400">Remote design leadership for US and Francophone African markets. Brand identity systems, culturally adapted campaign design, and a +45% engagement increase through precision visual execution.</p>
@@ -247,7 +267,7 @@
                 <div class="relative flex flex-col md:flex-row items-start md:items-center gap-8 group reveal">
                     <div class="absolute left-4 md:left-1/2 w-4 h-4 bg-gray-600 rounded-full transform -translate-x-1/2 border-4 border-black z-10 group-hover:scale-150 transition-transform"></div>
                     <div class="md:w-1/2 md:text-right md:pr-12 pl-12 md:pl-0">
-                        <span class="text-gray-500 font-semibold text-sm">2017 – Present</span>
+                        <time datetime="2017" class="text-gray-500 font-semibold text-sm">2017 – Present</time>
                         <h3 class="text-2xl font-bold mt-1">Creative Lead</h3>
                         <p class="text-gray-400 font-semibold">Claren Davis Media</p>
                         <p class="mt-3 text-sm text-gray-400">Logo design, brochures, web visuals, campaign assets. Client design projects from concept to final production.</p>
@@ -348,7 +368,6 @@
                             <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">Yoruba</span>
                             <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">Dioula</span>
                             <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">Pidgin</span>
-                            <span class="px-3 py-1 bg-gray-800 rounded-full text-xs">Spanish (Basic)</span>
                         </div>
                     </div>
                     <div>
@@ -431,24 +450,43 @@
             <a href="about.html" class="hover:text-white transition-colors">About</a>
             <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
         </div>
-        <span class="text-gray-700 text-xs">© 2025 Frédéric Idowu Oluwasola</span>
+        <span class="text-gray-700 text-xs">© 2025–2026 Frédéric Idowu Oluwasola</span>
     </div>
 </footer>
 
 <script>
-lucide.createIcons();
+window.addEventListener('DOMContentLoaded', () => {
+    // Mark all decorative icons as aria-hidden before lucide swaps them in
+    document.querySelectorAll('[data-lucide]').forEach(i => i.setAttribute('aria-hidden', 'true'));
+    if (window.lucide) lucide.createIcons();
 
-document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.remove('translate-x-full');
-});
-document.getElementById('closeMobileMenu').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.add('translate-x-full');
-});
+    // Mobile menu (ARIA-aware + Escape to close)
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const closeBtn = document.getElementById('closeMobileMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const openMenu = () => {
+        mobileMenu.classList.remove('translate-x-full');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        closeBtn.focus();
+    };
+    const closeMenu = () => {
+        mobileMenu.classList.add('translate-x-full');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.focus();
+    };
+    menuBtn.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('translate-x-full')) closeMenu();
+    });
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+});
 </script>
 </body>
 </html>

@@ -3,21 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#E50914">
     <title>Contact | Frédéric Idowu Oluwasola</title>
     <meta name="description" content="Book Frédéric Idowu for design projects, keynote speaking, or corporate communications engagements. Based in Lagos, Nigeria — available globally.">
+    <link rel="canonical" href="https://fredericidowu.com/contact.html">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Frédéric Idowu Oluwasola">
+    <meta property="og:title" content="Contact | Frédéric Idowu Oluwasola">
+    <meta property="og:description" content="Book Frédéric Idowu for design projects, keynote speaking, or corporate communications engagements.">
+    <meta property="og:url" content="https://fredericidowu.com/contact.html">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200&auto=format&fit=crop">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact | Frédéric Idowu Oluwasola">
+    <meta name="twitter:description" content="Start the conversation. Based in Lagos, Nigeria — available globally.">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23000'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-family='Georgia,serif' font-size='40' font-weight='700' fill='%23E50914' dominant-baseline='middle'%3EF%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- TODO: For production, build Tailwind locally instead of using CDN (https://tailwindcss.com/docs/installation) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="shared.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 <body class="antialiased selection:bg-red-600 selection:text-white">
 
 <div class="noise-overlay"></div>
 
 <!-- NAV -->
-<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 nav-blur px-4 md:px-10 py-4">
+<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 nav-blur px-4 md:px-10 py-4" aria-label="Primary">
     <div class="flex items-center justify-between max-w-7xl mx-auto">
-        <a href="index.html" class="flex items-center gap-2">
+        <a href="index.html" class="flex items-center gap-2" aria-label="Frédéric Idowu Oluwasola — Home">
             <span class="font-cinematic text-3xl text-red-600 tracking-wider">FREDERIC</span>
             <span class="hidden md:block text-[10px] text-gray-400 uppercase tracking-widest mt-2 leading-none">Idowu<br><span class="text-red-500/70">Oluwasola</span></span>
         </a>
@@ -26,25 +45,28 @@
             <a href="work.html" class="text-gray-300 hover:text-white transition-colors">Work</a>
             <a href="speaking.html" class="text-gray-300 hover:text-white transition-colors">Speaking</a>
             <a href="about.html" class="text-gray-300 hover:text-white transition-colors">About</a>
-            <a href="contact.html" class="text-red-500">Contact</a>
+            <a href="contact.html" class="text-red-500" aria-current="page">Contact</a>
             <a href="contact.html" class="btn-gold px-5 py-2 rounded-md font-bold text-sm flex items-center gap-2">
-                <i data-lucide="calendar" class="w-4 h-4"></i> Book Now
+                <i data-lucide="calendar" class="w-4 h-4" aria-hidden="true"></i> Book Now
             </a>
         </div>
-        <button id="mobileMenuBtn" class="md:hidden text-white p-1"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        <button id="mobileMenuBtn" type="button" class="md:hidden text-white p-1" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><i data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i></button>
     </div>
 </nav>
 
 <!-- Mobile Menu -->
-<div id="mobileMenu" class="fixed inset-0 bg-black z-40 transform translate-x-full transition-transform duration-300 md:hidden">
+<div id="mobileMenu" class="fixed inset-0 bg-black z-40 transform translate-x-full transition-transform duration-300 md:hidden" role="dialog" aria-modal="true" aria-label="Main menu" aria-hidden="true">
     <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl font-cinematic">
         <a href="index.html" class="hover:text-red-500 transition-colors">HOME</a>
         <a href="work.html" class="hover:text-red-500 transition-colors">WORK</a>
         <a href="speaking.html" class="hover:text-red-500 transition-colors">SPEAKING</a>
         <a href="about.html" class="hover:text-red-500 transition-colors">ABOUT</a>
-        <a href="contact.html" class="text-red-500">CONTACT</a>
+        <a href="contact.html" class="text-red-500" aria-current="page">CONTACT</a>
+        <a href="contact.html" class="btn-gold px-6 py-3 rounded-md font-bold text-base inline-flex items-center gap-2 mt-4">
+            <i data-lucide="calendar" class="w-4 h-4" aria-hidden="true"></i> BOOK NOW
+        </a>
     </div>
-    <button id="closeMobileMenu" class="absolute top-6 right-6 text-white"><i data-lucide="x" class="w-8 h-8"></i></button>
+    <button id="closeMobileMenu" type="button" class="absolute top-6 right-6 text-white" aria-label="Close menu"><i data-lucide="x" class="w-8 h-8" aria-hidden="true"></i></button>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -78,36 +100,44 @@
             <div class="reveal">
                 <div class="section-label mb-6">Send a Brief</div>
 
-                <form id="contactForm" action="mailto:fredericidowu@gmail.com" method="GET" enctype="text/plain" class="space-y-5">
+                <!--
+                    TODO: The form currently opens the visitor's email client via mailto: which is
+                    unreliable on mobile browsers and loses structured field data. Replace with a
+                    real form backend (Formspree, Netlify Forms, Basin, Web3Forms, etc.) when
+                    credentials/endpoint are available. Example:
+                        <form action="https://formspree.io/f/XXXXXXX" method="POST">
+                    Until then, the fallback mail link below is the primary channel.
+                -->
+                <form id="contactForm" action="mailto:fredericidowu@gmail.com" method="GET" enctype="text/plain" class="space-y-5" aria-label="Contact Frédéric">
 
                     <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">First Name</label>
-                            <input type="text" name="first_name" placeholder="Your first name" required
+                            <label for="contact-first-name" class="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">First Name</label>
+                            <input id="contact-first-name" type="text" name="first_name" placeholder="Your first name" required aria-required="true" autocomplete="given-name"
                                 class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-red-600 focus:outline-none transition-colors text-sm">
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Last Name</label>
-                            <input type="text" name="last_name" placeholder="Your last name"
+                            <label for="contact-last-name" class="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Last Name</label>
+                            <input id="contact-last-name" type="text" name="last_name" placeholder="Your last name" autocomplete="family-name"
                                 class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-red-600 focus:outline-none transition-colors text-sm">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Email Address</label>
-                        <input type="email" name="email" placeholder="your@email.com" required
+                        <label for="contact-email" class="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Email Address</label>
+                        <input id="contact-email" type="email" name="email" placeholder="your@email.com" required aria-required="true" autocomplete="email"
                             class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-red-600 focus:outline-none transition-colors text-sm">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Organization / Company</label>
-                        <input type="text" name="organization" placeholder="Your organization (optional)"
+                        <label for="contact-org" class="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Organization / Company</label>
+                        <input id="contact-org" type="text" name="organization" placeholder="Your organization (optional)" autocomplete="organization"
                             class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-red-600 focus:outline-none transition-colors text-sm">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Engagement Type</label>
-                        <select name="type" class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white focus:border-red-600 focus:outline-none transition-colors text-sm appearance-none" style="background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23808080' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 12px center;">
+                        <label for="contact-type" class="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Engagement Type</label>
+                        <select id="contact-type" name="type" class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white focus:border-red-600 focus:outline-none transition-colors text-sm appearance-none" style="background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23808080' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 12px center;">
                             <option value="" disabled selected class="text-gray-500">Select engagement type</option>
                             <option value="Brand Design Project">Brand Design Project</option>
                             <option value="Keynote Speaking">Keynote Speaking</option>
@@ -121,13 +151,13 @@
                     </div>
 
                     <div>
-                        <label class="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Your Brief</label>
-                        <textarea name="body" rows="5" placeholder="Tell Frédéric about your project, event, or engagement. The more detail you share, the better he can assess fit and availability." required
+                        <label for="contact-brief" class="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Your Brief</label>
+                        <textarea id="contact-brief" name="body" rows="5" placeholder="Tell Frédéric about your project, event, or engagement. The more detail you share, the better he can assess fit and availability." required aria-required="true"
                             class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-red-600 focus:outline-none transition-colors text-sm resize-none"></textarea>
                     </div>
 
                     <button type="submit" class="btn-red w-full text-white py-4 rounded-lg font-bold text-base flex items-center justify-center gap-3">
-                        <i data-lucide="send" class="w-5 h-5"></i>
+                        <i data-lucide="send" class="w-5 h-5" aria-hidden="true"></i>
                         Send Your Brief
                     </button>
 
@@ -173,9 +203,9 @@
                             </div>
                         </a>
 
-                        <a href="https://linkedin.com/in/fredericidowu" target="_blank" class="flex items-center gap-4 group">
+                        <a href="https://linkedin.com/in/fredericidowu" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 group">
                             <div class="w-12 h-12 bg-gray-900 border border-gray-800 rounded-xl flex items-center justify-center group-hover:border-red-600/50 transition-colors flex-shrink-0">
-                                <i data-lucide="linkedin" class="w-5 h-5 text-red-500"></i>
+                                <i data-lucide="linkedin" class="w-5 h-5 text-red-500" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <p class="text-xs text-gray-500 uppercase tracking-widest mb-0.5">LinkedIn</p>
@@ -183,7 +213,7 @@
                             </div>
                         </a>
 
-                        <a href="https://bit.ly/fredfolio" target="_blank" class="flex items-center gap-4 group">
+                        <a href="https://bit.ly/fredfolio" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 group">
                             <div class="w-12 h-12 bg-gray-900 border border-gray-800 rounded-xl flex items-center justify-center group-hover:border-red-600/50 transition-colors flex-shrink-0">
                                 <i data-lucide="briefcase" class="w-5 h-5 text-red-500"></i>
                             </div>
@@ -345,34 +375,54 @@
                     <li><a href="tel:+2347062273466" class="hover:text-white transition-colors">+234 706 227 3466</a></li>
                     <li>Lagos, Nigeria · Remote-Ready</li>
                     <li>
-                        <a href="https://linkedin.com/in/fredericidowu" target="_blank" class="hover:text-white transition-colors flex items-center gap-2 mt-1">
-                            <i data-lucide="linkedin" class="w-4 h-4 text-red-500"></i> LinkedIn
+                        <a href="https://linkedin.com/in/fredericidowu" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-2 mt-1">
+                            <i data-lucide="linkedin" class="w-4 h-4 text-red-500" aria-hidden="true"></i> LinkedIn
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="border-t border-gray-900 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-gray-600 text-xs">
-            <span>© 2025 Frédéric Idowu Oluwasola. All rights reserved.</span>
+            <span>© 2025–2026 Frédéric Idowu Oluwasola. All rights reserved.</span>
             <span class="text-gray-700">Crafted with intention. Every pixel has a purpose.</span>
         </div>
     </div>
 </footer>
 
 <script>
-lucide.createIcons();
+window.addEventListener('DOMContentLoaded', () => {
+    // Mark all decorative Lucide icons as aria-hidden before they render
+    document.querySelectorAll('[data-lucide]').forEach(i => i.setAttribute('aria-hidden', 'true'));
+    if (window.lucide) lucide.createIcons();
 
-document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.remove('translate-x-full');
-});
-document.getElementById('closeMobileMenu').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.add('translate-x-full');
-});
+    const menuBtn   = document.getElementById('mobileMenuBtn');
+    const closeBtn  = document.getElementById('closeMobileMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    const openNav = () => {
+        mobileMenu.classList.remove('translate-x-full');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        closeBtn.focus();
+    };
+    const closeNav = () => {
+        mobileMenu.classList.add('translate-x-full');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.focus();
+    };
+
+    menuBtn.addEventListener('click', openNav);
+    closeBtn.addEventListener('click', closeNav);
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('translate-x-full')) closeNav();
+    });
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+});
 </script>
 </body>
 </html>
