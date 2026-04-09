@@ -3,12 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#E50914">
     <title>Frédéric Idowu | Brand Director · Speaker · Corporate Communications</title>
     <meta name="description" content="Frédéric Idowu — Visual Design Director, Public Speaker & Corporate Communications Specialist. Trusted by the African Union, GIZ, and governments across 12+ nations.">
+    <link rel="canonical" href="https://fredericidowu.com/index.html">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Frédéric Idowu Oluwasola">
+    <meta property="og:title" content="Frédéric Idowu | Brand Director · Speaker · Corporate Communications">
+    <meta property="og:description" content="Visual Design Director, Public Speaker & Corporate Communications Specialist. Trusted by the African Union, GIZ, and governments across 12+ nations.">
+    <meta property="og:url" content="https://fredericidowu.com/index.html">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Frédéric Idowu | Brand Director · Speaker · Corporate Communications">
+    <meta name="twitter:description" content="Visual Design Director, Public Speaker & Corporate Communications Specialist. Trusted by the African Union, GIZ, and governments across 12+ nations.">
+
+    <!-- Inline SVG favicon (no external file needed) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23000'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-family='Georgia,serif' font-size='40' font-weight='700' fill='%23E50914' dominant-baseline='middle'%3EF%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- TODO: For production, build Tailwind locally instead of using CDN (https://tailwindcss.com/docs/installation) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="shared.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <!-- JSON-LD: Person schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Frédéric Idowu Oluwasola",
+      "alternateName": "Frederic Idowu",
+      "jobTitle": "Visual Design Director, Public Speaker & Corporate Communications Specialist",
+      "description": "Visual Design Director, Public Speaker & Corporate Communications Specialist. Trusted by the African Union, GIZ, and governments across 12+ nations.",
+      "url": "https://fredericidowu.com/",
+      "email": "mailto:fredericidowu@gmail.com",
+      "telephone": "+234-706-227-3466",
+      "sameAs": [
+        "https://linkedin.com/in/fredericidowu"
+      ],
+      "address": [
+        { "@type": "PostalAddress", "addressLocality": "Lagos", "addressCountry": "NG" },
+        { "@type": "PostalAddress", "addressLocality": "California", "addressCountry": "US" }
+      ],
+      "knowsLanguage": ["English", "French", "Yoruba", "Dioula", "Pidgin"],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "AfroAngle",
+        "address": { "@type": "PostalAddress", "addressLocality": "California", "addressCountry": "US" }
+      },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "University of Lagos" },
+        { "@type": "Organization", "name": "African Union" },
+        { "@type": "Organization", "name": "GIZ" }
+      ]
+    }
+    </script>
 </head>
 <body class="antialiased selection:bg-red-600 selection:text-white">
 
@@ -19,38 +72,38 @@
 ════════════════════════════════════════════════════════ -->
 <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 nav-transparent px-4 md:px-10 py-4">
     <div class="flex items-center justify-between max-w-7xl mx-auto">
-        <a href="index.html" class="flex items-center gap-2">
+        <a href="index.html" class="flex items-center gap-2" aria-label="Frédéric Idowu Oluwasola — Home">
             <span class="font-cinematic text-3xl text-red-600 tracking-wider">FREDERIC</span>
             <span class="hidden md:block text-[10px] text-gray-400 uppercase tracking-widest mt-2 leading-none">Idowu<br><span class="text-red-500/70">Oluwasola</span></span>
         </a>
         <div class="hidden md:flex items-center gap-7 text-sm font-medium">
-            <a href="index.html" class="text-red-500">Home</a>
+            <a href="index.html" class="text-red-500" aria-current="page">Home</a>
             <a href="work.html" class="text-gray-300 hover:text-white transition-colors">Work</a>
             <a href="speaking.html" class="text-gray-300 hover:text-white transition-colors">Speaking</a>
             <a href="about.html" class="text-gray-300 hover:text-white transition-colors">About</a>
             <a href="contact.html" class="text-gray-300 hover:text-white transition-colors">Contact</a>
             <a href="contact.html" class="btn-gold px-5 py-2 rounded-md font-bold text-sm flex items-center gap-2">
-                <i data-lucide="calendar" class="w-4 h-4"></i> Book Now
+                <i data-lucide="calendar" class="w-4 h-4" aria-hidden="true"></i> Book Now
             </a>
         </div>
-        <button id="mobileMenuBtn" class="md:hidden text-white p-1">
-            <i data-lucide="menu" class="w-6 h-6"></i>
+        <button id="mobileMenuBtn" class="md:hidden text-white p-1" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <i data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i>
         </button>
     </div>
 </nav>
 
 <!-- Mobile Menu -->
-<div id="mobileMenu" class="fixed inset-0 bg-black z-40 transform translate-x-full transition-transform duration-300 md:hidden">
+<div id="mobileMenu" class="fixed inset-0 bg-black z-40 transform translate-x-full transition-transform duration-300 md:hidden" role="dialog" aria-modal="true" aria-label="Main menu" aria-hidden="true">
     <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl font-cinematic">
-        <a href="index.html" class="text-red-500">HOME</a>
+        <a href="index.html" class="text-red-500" aria-current="page">HOME</a>
         <a href="work.html" class="hover:text-red-500 transition-colors">WORK</a>
         <a href="speaking.html" class="hover:text-red-500 transition-colors">SPEAKING</a>
         <a href="about.html" class="hover:text-red-500 transition-colors">ABOUT</a>
         <a href="contact.html" class="hover:text-red-500 transition-colors">CONTACT</a>
         <a href="contact.html" class="mt-4 btn-gold px-8 py-3 rounded-md text-base font-bold">Book Now</a>
     </div>
-    <button id="closeMobileMenu" class="absolute top-6 right-6 text-white">
-        <i data-lucide="x" class="w-8 h-8"></i>
+    <button id="closeMobileMenu" class="absolute top-6 right-6 text-white" aria-label="Close menu">
+        <i data-lucide="x" class="w-8 h-8" aria-hidden="true"></i>
     </button>
 </div>
 
@@ -58,10 +111,11 @@
      HERO — CINEMATIC VIDEO
 ════════════════════════════════════════════════════════ -->
 <header class="relative h-screen w-full overflow-hidden">
-    <video class="hero-video opacity-55" autoplay muted loop playsinline
+    <video class="hero-video opacity-55" autoplay muted loop playsinline aria-hidden="true"
            poster="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2564&auto=format&fit=crop">
         <source src="https://videos.pexels.com/video-files/2278095/2278095-hd_1920_1080_25fps.mp4" type="video/mp4">
-        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2564&auto=format&fit=crop" class="hero-video" alt="">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2564&auto=format&fit=crop"
+             class="hero-video" alt="Abstract cinematic background" width="2564" height="1443" loading="eager">
     </video>
     <div class="hero-overlay-left absolute inset-0 z-10"></div>
     <div class="hero-bottom-fade absolute bottom-0 left-0 w-full z-10"></div>
@@ -90,15 +144,15 @@
 
             <div class="fade-in-up delay-300 flex flex-wrap items-center gap-3 text-sm font-medium">
                 <span class="available-pulse bg-green-900/40 border border-green-500/40 text-green-400 px-3 py-1 rounded-full flex items-center gap-2">
-                    <span class="w-2 h-2 bg-green-400 rounded-full inline-block"></span>
+                    <span class="w-2 h-2 bg-green-400 rounded-full inline-block" aria-hidden="true"></span>
                     Available for Engagements
                 </span>
                 <span class="border border-yellow-600/50 text-yellow-400/90 px-3 py-1 rounded-full flex items-center gap-2">
-                    <i data-lucide="award" class="w-3.5 h-3.5"></i>
+                    <i data-lucide="award" class="w-3.5 h-3.5" aria-hidden="true"></i>
                     AU &amp; GIZ Alumnus
                 </span>
                 <span class="border border-gray-600/50 text-gray-300 px-3 py-1 rounded-full flex items-center gap-2">
-                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-500"></i>
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-500" aria-hidden="true"></i>
                     Lagos · California · Global
                 </span>
             </div>
@@ -106,17 +160,17 @@
             <div class="fade-in-up delay-400 flex flex-wrap gap-4 pt-2">
                 <a href="speaking.html"
                    class="btn-gold text-black px-8 py-4 rounded-md font-bold text-base flex items-center gap-3 shadow-lg shadow-yellow-900/30">
-                    <i data-lucide="mic" class="w-5 h-5"></i>
+                    <i data-lucide="mic" class="w-5 h-5" aria-hidden="true"></i>
                     Speaking & Communications
                 </a>
                 <a href="work.html"
                    class="btn-ghost text-white px-8 py-4 rounded-md font-semibold text-base flex items-center gap-3">
-                    <i data-lucide="play" class="w-5 h-5 fill-current"></i>
+                    <i data-lucide="play" class="w-5 h-5 fill-current" aria-hidden="true"></i>
                     View My Work
                 </a>
             </div>
         </div>
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-gray-500 scroll-indicator">
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-gray-500 scroll-indicator" aria-hidden="true">
             <span class="text-[10px] tracking-widest uppercase">Scroll</span>
             <i data-lucide="chevron-down" class="w-5 h-5"></i>
         </div>
@@ -168,7 +222,7 @@
             <!-- Pillar 1: Brand Design -->
             <div class="value-card rounded-xl p-8 reveal">
                 <div class="w-14 h-14 bg-red-600/20 rounded-xl flex items-center justify-center mb-6">
-                    <i data-lucide="palette" class="w-7 h-7 text-red-500"></i>
+                    <i data-lucide="palette" class="w-7 h-7 text-red-500" aria-hidden="true"></i>
                 </div>
                 <div class="section-label mb-2" style="margin-bottom:0.5rem;">01</div>
                 <h3 class="font-cinematic text-3xl mb-4">Visual Design<br>Director</h3>
@@ -182,14 +236,14 @@
                     <span class="text-xs bg-red-600/15 border border-red-600/25 text-red-400 px-2 py-1 rounded">Art Direction</span>
                 </div>
                 <a href="work.html" class="inline-flex items-center gap-2 text-sm text-red-500 hover:text-red-400 font-semibold mt-5 transition-colors">
-                    View Portfolio <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    View Portfolio <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
                 </a>
             </div>
 
             <!-- Pillar 2: Public Speaker -->
             <div class="value-card gold-card rounded-xl p-8 reveal" style="animation-delay:0.15s;">
-                <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style="background:rgba(201,168,76,0.15);">
-                    <i data-lucide="mic" class="w-7 h-7" style="color:var(--gold);"></i>
+                <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-gold-softest">
+                    <i data-lucide="mic" class="w-7 h-7 text-gold" aria-hidden="true"></i>
                 </div>
                 <div class="section-label gold-label mb-2" style="margin-bottom:0.5rem;">02</div>
                 <h3 class="font-cinematic text-3xl mb-4">Public Speaker<br>&amp; Communicator</h3>
@@ -198,19 +252,19 @@
                     to ministerial briefings and international media. He doesn't just present; he persuades.
                 </p>
                 <div class="flex flex-wrap gap-2">
-                    <span class="text-xs px-2 py-1 rounded" style="background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);color:var(--gold);">Keynote Speaking</span>
-                    <span class="text-xs px-2 py-1 rounded" style="background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);color:var(--gold);">Panel Moderation</span>
-                    <span class="text-xs px-2 py-1 rounded" style="background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);color:var(--gold);">Workshop Facilitation</span>
+                    <span class="text-xs px-2 py-1 rounded bg-gold-softer border border-gold-soft text-gold">Keynote Speaking</span>
+                    <span class="text-xs px-2 py-1 rounded bg-gold-softer border border-gold-soft text-gold">Panel Moderation</span>
+                    <span class="text-xs px-2 py-1 rounded bg-gold-softer border border-gold-soft text-gold">Workshop Facilitation</span>
                 </div>
-                <a href="speaking.html" class="inline-flex items-center gap-2 text-sm font-semibold mt-5 transition-colors hover:opacity-80" style="color:var(--gold);">
-                    Explore Speaking <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                <a href="speaking.html" class="inline-flex items-center gap-2 text-sm font-semibold mt-5 transition-colors hover:opacity-80 text-gold">
+                    Explore Speaking <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
                 </a>
             </div>
 
             <!-- Pillar 3: Corporate Communications -->
             <div class="value-card rounded-xl p-8 reveal" style="animation-delay:0.3s;">
                 <div class="w-14 h-14 bg-red-600/20 rounded-xl flex items-center justify-center mb-6">
-                    <i data-lucide="globe-2" class="w-7 h-7 text-red-500"></i>
+                    <i data-lucide="globe-2" class="w-7 h-7 text-red-500" aria-hidden="true"></i>
                 </div>
                 <div class="section-label mb-2" style="margin-bottom:0.5rem;">03</div>
                 <h3 class="font-cinematic text-3xl mb-4">Corporate<br>Strategist</h3>
@@ -224,7 +278,7 @@
                     <span class="text-xs bg-red-600/15 border border-red-600/25 text-red-400 px-2 py-1 rounded">Brand Governance</span>
                 </div>
                 <a href="about.html" class="inline-flex items-center gap-2 text-sm text-red-500 hover:text-red-400 font-semibold mt-5 transition-colors">
-                    Full Experience <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    Full Experience <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
@@ -260,7 +314,7 @@
                     into compelling narrative makes him the communicator that high-level tables call first.
                 </p>
                 <a href="speaking.html" class="btn-gold inline-flex items-center gap-3 px-8 py-4 rounded-md font-bold text-base reveal">
-                    <i data-lucide="mic" class="w-5 h-5"></i>
+                    <i data-lucide="mic" class="w-5 h-5" aria-hidden="true"></i>
                     Explore Speaking Profile
                 </a>
             </div>
@@ -268,8 +322,8 @@
             <div class="space-y-4 reveal">
                 <!-- Topic Cards -->
                 <div class="topic-card rounded-xl p-6 flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center" style="background:rgba(201,168,76,0.15);">
-                        <i data-lucide="globe" class="w-5 h-5" style="color:var(--gold);"></i>
+                    <div class="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center bg-gold-softest">
+                        <i data-lucide="globe" class="w-5 h-5 text-gold" aria-hidden="true"></i>
                     </div>
                     <div>
                         <h4 class="font-semibold text-white mb-1">African Brand Diplomacy</h4>
@@ -277,8 +331,8 @@
                     </div>
                 </div>
                 <div class="topic-card rounded-xl p-6 flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center" style="background:rgba(201,168,76,0.15);">
-                        <i data-lucide="building-2" class="w-5 h-5" style="color:var(--gold);"></i>
+                    <div class="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center bg-gold-softest">
+                        <i data-lucide="building-2" class="w-5 h-5 text-gold" aria-hidden="true"></i>
                     </div>
                     <div>
                         <h4 class="font-semibold text-white mb-1">Corporate Communications for Institutions</h4>
@@ -286,8 +340,8 @@
                     </div>
                 </div>
                 <div class="topic-card rounded-xl p-6 flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center" style="background:rgba(201,168,76,0.15);">
-                        <i data-lucide="users" class="w-5 h-5" style="color:var(--gold);"></i>
+                    <div class="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center bg-gold-softest">
+                        <i data-lucide="users" class="w-5 h-5 text-gold" aria-hidden="true"></i>
                     </div>
                     <div>
                         <h4 class="font-semibold text-white mb-1">Creative Economy &amp; Africa's Next Chapter</h4>
@@ -295,8 +349,8 @@
                     </div>
                 </div>
                 <div class="topic-card rounded-xl p-6 flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center" style="background:rgba(201,168,76,0.15);">
-                        <i data-lucide="zap" class="w-5 h-5" style="color:var(--gold);"></i>
+                    <div class="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center bg-gold-softest">
+                        <i data-lucide="zap" class="w-5 h-5 text-gold" aria-hidden="true"></i>
                     </div>
                     <div>
                         <h4 class="font-semibold text-white mb-1">Authority Positioning for Leaders &amp; Experts</h4>
@@ -319,14 +373,16 @@
                 <h2 class="font-cinematic text-4xl md:text-5xl reveal">The Portfolio</h2>
             </div>
             <a href="work.html" class="hidden md:inline-flex items-center gap-2 text-sm text-gray-400 hover:text-red-500 font-semibold transition-colors reveal">
-                View All Projects <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                View All Projects <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
             </a>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
 
             <a href="work.html" class="group relative rounded-xl overflow-hidden aspect-video bg-gray-900 reveal block">
-                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover opacity-75 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500" alt="Tikera Africa">
+                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop"
+                     class="w-full h-full object-cover opacity-75 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+                     alt="Tikera Africa — AU & GIZ brand identity project" width="2000" height="1333" loading="lazy" decoding="async">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 p-5">
                     <span class="bg-red-600 text-white text-xs px-2 py-0.5 rounded font-semibold">Featured</span>
@@ -336,7 +392,9 @@
             </a>
 
             <a href="work.html" class="group relative rounded-xl overflow-hidden aspect-video bg-gray-900 reveal block" style="animation-delay:0.1s;">
-                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover opacity-75 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500" alt="Reimagining Hope">
+                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=2000&auto=format&fit=crop"
+                     class="w-full h-full object-cover opacity-75 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+                     alt="Reimagining Hope Residency — Nigerian federal national art residency branding" width="2000" height="1333" loading="lazy" decoding="async">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 p-5">
                     <span class="bg-purple-600 text-white text-xs px-2 py-0.5 rounded font-semibold">Government</span>
@@ -346,7 +404,9 @@
             </a>
 
             <a href="work.html" class="group relative rounded-xl overflow-hidden aspect-video bg-gray-900 reveal block" style="animation-delay:0.2s;">
-                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover opacity-75 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500" alt="AfriTalent">
+                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2000&auto=format&fit=crop"
+                     class="w-full h-full object-cover opacity-75 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+                     alt="Afri'Talent Bootcamp — pan-African continental talent program" width="2000" height="1333" loading="lazy" decoding="async">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 p-5">
                     <span class="bg-blue-600 text-white text-xs px-2 py-0.5 rounded font-semibold">Pan-African</span>
@@ -358,7 +418,7 @@
 
         <div class="text-center mt-10 reveal">
             <a href="work.html" class="btn-red inline-flex items-center gap-3 px-8 py-4 rounded-md font-bold text-base text-white">
-                <i data-lucide="briefcase" class="w-5 h-5"></i> Full Portfolio
+                <i data-lucide="briefcase" class="w-5 h-5" aria-hidden="true"></i> Full Portfolio
             </a>
         </div>
     </div>
@@ -396,10 +456,10 @@
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center reveal">
             <a href="contact.html" class="btn-gold inline-flex items-center justify-center gap-3 px-10 py-4 rounded-md font-bold text-lg">
-                <i data-lucide="mail" class="w-5 h-5"></i> Get In Touch
+                <i data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i> Get In Touch
             </a>
             <a href="speaking.html" class="btn-ghost inline-flex items-center justify-center gap-3 px-10 py-4 rounded-md font-semibold text-lg text-white">
-                <i data-lucide="mic" class="w-5 h-5"></i> Book a Speaker
+                <i data-lucide="mic" class="w-5 h-5" aria-hidden="true"></i> Book a Speaker
             </a>
         </div>
     </div>
@@ -436,48 +496,64 @@
                     <li><a href="tel:+2347062273466" class="hover:text-white transition-colors">+234 706 227 3466</a></li>
                     <li><span>Lagos, Nigeria · Remote-Ready</span></li>
                     <li>
-                        <a href="https://linkedin.com/in/fredericidowu" target="_blank" class="hover:text-white transition-colors flex items-center gap-2 mt-1">
-                            <i data-lucide="linkedin" class="w-4 h-4 text-red-500"></i> LinkedIn
+                        <a href="https://linkedin.com/in/fredericidowu" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-2 mt-1">
+                            <i data-lucide="linkedin" class="w-4 h-4 text-red-500" aria-hidden="true"></i> LinkedIn
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="border-t border-gray-900 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-gray-600 text-xs">
-            <span>© 2025 Frédéric Idowu Oluwasola. All rights reserved.</span>
+            <span>© 2025–2026 Frédéric Idowu Oluwasola. All rights reserved.</span>
             <span class="text-gray-700">Crafted with intention. Every pixel has a purpose.</span>
         </div>
     </div>
 </footer>
 
 <script>
-    lucide.createIcons();
+    window.addEventListener('DOMContentLoaded', () => {
+        if (window.lucide) lucide.createIcons();
 
-    // Navbar scroll effect
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 80) {
-            navbar.classList.remove('nav-transparent');
-            navbar.classList.add('nav-blur');
-        } else {
-            navbar.classList.add('nav-transparent');
-            navbar.classList.remove('nav-blur');
-        }
-    });
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 80) {
+                navbar.classList.remove('nav-transparent');
+                navbar.classList.add('nav-blur');
+            } else {
+                navbar.classList.add('nav-transparent');
+                navbar.classList.remove('nav-blur');
+            }
+        });
 
-    // Mobile menu
-    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-        document.getElementById('mobileMenu').classList.remove('translate-x-full');
-    });
-    document.getElementById('closeMobileMenu').addEventListener('click', () => {
-        document.getElementById('mobileMenu').classList.add('translate-x-full');
-    });
+        // Mobile menu (with ARIA state + Escape to close)
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const closeBtn = document.getElementById('closeMobileMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const openMenu = () => {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.setAttribute('aria-hidden', 'false');
+            menuBtn.setAttribute('aria-expanded', 'true');
+            closeBtn.focus();
+        };
+        const closeMenu = () => {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            menuBtn.focus();
+        };
+        menuBtn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('translate-x-full')) closeMenu();
+        });
 
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
 </script>
 </body>
 </html>

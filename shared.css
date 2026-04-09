@@ -267,3 +267,50 @@ body {
 /* ─── Mobile nav slide ─── */
 .mobile-nav-open  { transform: translateX(0); }
 .mobile-nav-close { transform: translateX(100%); }
+
+/* ─── Accessibility: focus-visible ─── */
+:focus { outline: none; }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role="button"]:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+.project-card:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+/* Visually-hidden utility for screen-reader-only text */
+.sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0);
+    white-space: nowrap; border: 0;
+}
+
+/* ─── Gold utility classes (replaces repeated inline styles) ─── */
+.bg-gold-soft     { background: rgba(201,168,76,0.08); }
+.bg-gold-softer   { background: rgba(201,168,76,0.12); }
+.bg-gold-softest  { background: rgba(201,168,76,0.15); }
+.border-gold-soft { border-color: rgba(201,168,76,0.25); }
+.text-gold        { color: var(--gold); }
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+    .scroll-indicator { animation: none; }
+    .available-pulse  { animation: none; }
+}

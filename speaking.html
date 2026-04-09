@@ -3,48 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#C9A84C">
     <title>Speaking & Corporate Communications | Frédéric Idowu Oluwasola</title>
     <meta name="description" content="Book Frédéric Idowu — Public Speaker, Corporate Communications Specialist & Strategic Narrative Architect. Keynotes, panels, and diplomatic forums.">
+    <link rel="canonical" href="https://fredericidowu.com/speaking.html">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Frédéric Idowu Oluwasola">
+    <meta property="og:title" content="Speaking & Corporate Communications | Frédéric Idowu">
+    <meta property="og:description" content="Public Speaker, Corporate Communications Specialist & Strategic Narrative Architect. Keynotes, panels, and diplomatic forums.">
+    <meta property="og:url" content="https://fredericidowu.com/speaking.html">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=1200&auto=format&fit=crop">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Speaking & Corporate Communications | Frédéric Idowu">
+    <meta name="twitter:description" content="Keynotes, panel moderation, and workshops for continental summits, diplomatic forums, and leadership programs.">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23000'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-family='Georgia,serif' font-size='40' font-weight='700' fill='%23E50914' dominant-baseline='middle'%3EF%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- TODO: For production, build Tailwind locally instead of using CDN (https://tailwindcss.com/docs/installation) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="shared.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 <body class="antialiased selection:bg-yellow-600 selection:text-black">
 
 <div class="noise-overlay"></div>
 
 <!-- NAV -->
-<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 nav-blur px-4 md:px-10 py-4">
+<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 nav-blur px-4 md:px-10 py-4" aria-label="Primary">
     <div class="flex items-center justify-between max-w-7xl mx-auto">
-        <a href="index.html" class="flex items-center gap-2">
+        <a href="index.html" class="flex items-center gap-2" aria-label="Frédéric Idowu Oluwasola — Home">
             <span class="font-cinematic text-3xl text-red-600 tracking-wider">FREDERIC</span>
             <span class="hidden md:block text-[10px] text-gray-400 uppercase tracking-widest mt-2 leading-none">Idowu<br><span class="text-red-500/70">Oluwasola</span></span>
         </a>
         <div class="hidden md:flex items-center gap-7 text-sm font-medium">
             <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
             <a href="work.html" class="text-gray-300 hover:text-white transition-colors">Work</a>
-            <a href="speaking.html" class="text-yellow-400">Speaking</a>
+            <a href="speaking.html" class="text-yellow-400" aria-current="page">Speaking</a>
             <a href="about.html" class="text-gray-300 hover:text-white transition-colors">About</a>
             <a href="contact.html" class="text-gray-300 hover:text-white transition-colors">Contact</a>
             <a href="contact.html" class="btn-gold px-5 py-2 rounded-md font-bold text-sm flex items-center gap-2">
-                <i data-lucide="calendar" class="w-4 h-4"></i> Book Now
+                <i data-lucide="calendar" class="w-4 h-4" aria-hidden="true"></i> Book Now
             </a>
         </div>
-        <button id="mobileMenuBtn" class="md:hidden text-white p-1"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        <button id="mobileMenuBtn" type="button" class="md:hidden text-white p-1" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><i data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i></button>
     </div>
 </nav>
 
 <!-- Mobile Menu -->
-<div id="mobileMenu" class="fixed inset-0 bg-black z-40 transform translate-x-full transition-transform duration-300 md:hidden">
+<div id="mobileMenu" class="fixed inset-0 bg-black z-40 transform translate-x-full transition-transform duration-300 md:hidden" role="dialog" aria-modal="true" aria-label="Main menu" aria-hidden="true">
     <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl font-cinematic">
         <a href="index.html" class="hover:text-red-500 transition-colors">HOME</a>
         <a href="work.html" class="hover:text-red-500 transition-colors">WORK</a>
-        <a href="speaking.html" class="text-yellow-400">SPEAKING</a>
+        <a href="speaking.html" class="text-yellow-400" aria-current="page">SPEAKING</a>
         <a href="about.html" class="hover:text-red-500 transition-colors">ABOUT</a>
         <a href="contact.html" class="hover:text-red-500 transition-colors">CONTACT</a>
+        <a href="contact.html" class="btn-gold px-6 py-3 rounded-md font-bold text-base inline-flex items-center gap-2 mt-4">
+            <i data-lucide="calendar" class="w-4 h-4" aria-hidden="true"></i> BOOK NOW
+        </a>
     </div>
-    <button id="closeMobileMenu" class="absolute top-6 right-6 text-white"><i data-lucide="x" class="w-8 h-8"></i></button>
+    <button id="closeMobileMenu" type="button" class="absolute top-6 right-6 text-white" aria-label="Close menu"><i data-lucide="x" class="w-8 h-8" aria-hidden="true"></i></button>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -115,19 +137,19 @@
 ════════════════════════════════════════════════════════ -->
 <section class="py-20 px-4 md:px-12 bg-black">
     <div class="max-w-4xl mx-auto reveal">
-        <div class="quote-block rounded-r-xl p-8 md:p-12">
+        <blockquote class="quote-block rounded-r-xl p-8 md:p-12">
             <p class="font-serif-display text-2xl md:text-3xl text-gray-200 leading-relaxed italic mb-6">
-                "In a room full of experts, the one who shapes the narrative controls the outcome.
-                I don't just enter rooms — I shift what's possible inside them."
+                &ldquo;In a room full of experts, the one who shapes the narrative controls the outcome.
+                I don't just enter rooms &mdash; I shift what's possible inside them.&rdquo;
             </p>
-            <div class="flex items-center gap-4">
-                <div class="gold-divider"></div>
+            <footer class="flex items-center gap-4">
+                <div class="gold-divider" aria-hidden="true"></div>
                 <div>
-                    <p class="font-semibold text-white">Frédéric Idowu Oluwasola</p>
+                    <p class="font-semibold text-white not-italic">Frédéric Idowu Oluwasola</p>
                     <p class="text-xs text-gray-500">Visual Design Director · Corporate Communications Specialist</p>
                 </div>
-            </div>
-        </div>
+            </footer>
+        </blockquote>
     </div>
 </section>
 
@@ -480,24 +502,44 @@
             <a href="about.html" class="hover:text-white transition-colors">About</a>
             <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
         </div>
-        <span class="text-gray-700 text-xs">© 2025 Frédéric Idowu Oluwasola</span>
+        <span class="text-gray-700 text-xs">© 2025–2026 Frédéric Idowu Oluwasola</span>
     </div>
 </footer>
 
 <script>
-lucide.createIcons();
+window.addEventListener('DOMContentLoaded', () => {
+    // Mark all decorative Lucide icons as aria-hidden before they render
+    document.querySelectorAll('[data-lucide]').forEach(i => i.setAttribute('aria-hidden', 'true'));
+    if (window.lucide) lucide.createIcons();
 
-document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.remove('translate-x-full');
-});
-document.getElementById('closeMobileMenu').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.add('translate-x-full');
-});
+    const menuBtn   = document.getElementById('mobileMenuBtn');
+    const closeBtn  = document.getElementById('closeMobileMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    const openNav = () => {
+        mobileMenu.classList.remove('translate-x-full');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        closeBtn.focus();
+    };
+    const closeNav = () => {
+        mobileMenu.classList.add('translate-x-full');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.focus();
+    };
+
+    menuBtn.addEventListener('click', openNav);
+    closeBtn.addEventListener('click', closeNav);
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('translate-x-full')) closeNav();
+    });
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+});
 </script>
 </body>
 </html>
